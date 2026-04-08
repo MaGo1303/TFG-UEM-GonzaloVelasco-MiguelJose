@@ -1,0 +1,14 @@
+# Archivos del sistema
+*.pdf
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.suo
+*.user
+
+# Node (por si se usa en el futuro)
+node_modules/
+.env
