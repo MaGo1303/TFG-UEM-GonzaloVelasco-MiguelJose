@@ -70,6 +70,11 @@ span.gold, span { color: inherit; }
   transition: var(--ease);
 }
 .nav-links a:hover { color: var(--text); background: var(--border2); }
+
+/* Mobile-only elements — hidden on desktop */
+.nav-mobile-logo { display: none; }
+.nav-mobile-sep  { display: none; }
+
 .burger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;
@@ -409,10 +414,48 @@ span.gold, span { color: inherit; }
 }
 
 @media (max-width: 640px) {
-  .nav-links { display: none; position: fixed; inset: 0; background: rgba(9,13,23,0.97); flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(9,13,23,0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    z-index: 150;
+    overflow: hidden;
+  }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.2rem; }
-  .burger { display: flex; z-index: 200; }
+  .nav-links a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 10px 28px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    max-width: 260px;
+  }
+  .nav-links a:hover { background: var(--border2); color: var(--gold); }
+  .nav-mobile-logo {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .nav-mobile-logo span { color: var(--gold); }
+  .nav-mobile-sep {
+    display: block;
+    width: 40px; height: 2px;
+    background: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
   .services-grid { grid-template-columns: 1fr; }
   .app-features { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }

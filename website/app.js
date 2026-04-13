@@ -11,14 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Burger menu
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+
+  function openMenu() {
+    burger.classList.add('open');
+    navLinks.classList.add('open');
+    document.body.style.overflow = 'hidden'; // bloquea scroll
+  }
+  function closeMenu() {
     burger.classList.remove('open');
     navLinks.classList.remove('open');
-  }));
+    document.body.style.overflow = ''; // desbloquea scroll
+  }
+
+  burger.addEventListener('click', () => {
+    burger.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.service-card, .app-feat, .team-card, .tech');
