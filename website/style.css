@@ -96,7 +96,7 @@ span.gold, span { color: inherit; }
 /* Imagen de fondo */
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('banner.png') center center / cover no-repeat;
+  background: url('img/banner.png') center center / cover no-repeat;
   transform: scale(1.04);
   transition: transform 8s ease;
 }
