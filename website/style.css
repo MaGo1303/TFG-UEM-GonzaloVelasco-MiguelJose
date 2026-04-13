@@ -260,6 +260,10 @@ span.gold, span { color: inherit; }
   border-radius: var(--r);
   padding: 30px 26px;
   transition: var(--ease);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 .service-card:hover {
   border-color: var(--border);
@@ -276,6 +280,14 @@ span.gold, span { color: inherit; }
   margin-bottom: 8px;
 }
 .service-card p { font-size: 0.86rem; color: var(--muted); margin-bottom: 14px; }
+.sc-more {
+  display: block;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--gold);
+  margin-top: 14px;
+  transition: var(--ease);
+}
+.service-card:hover .sc-more { letter-spacing: 0.03em; }
 .price {
   font-size: 0.78rem; font-weight: 600;
   color: var(--gold);
