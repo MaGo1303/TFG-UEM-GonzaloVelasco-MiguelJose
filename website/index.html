@@ -3,656 +3,167 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RoyalRent — Alquiler de Lujo Exclusivo</title>
-  <meta name="description" content="RoyalRent es la plataforma digital premium para centralizar el alquiler de servicios y vehículos de lujo. Coches, jets privados, yates, villas y mucho más." />
-  <meta name="keywords" content="alquiler lujo, coches lujo, jets privados, yates, villas, RoyalRent" />
-  <meta property="og:title" content="RoyalRent — Alquiler de Lujo Exclusivo" />
-  <meta property="og:description" content="La plataforma definitiva para el alquiler de servicios premium y vehículos de lujo." />
+  <title>RoyalRent — Alquiler de Lujo</title>
+  <meta name="description" content="RoyalRent: plataforma de alquiler de vehículos y servicios de lujo. Coches, jets, yates, villas y más." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-crown">♛</span>
-        <span class="logo-text">Royal<span class="gold">Rent</span></span>
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#categorias" class="nav-link">Categorías</a></li>
-        <li><a href="#app" class="nav-link">App</a></li>
-        <li><a href="#equipo" class="nav-link">Equipo</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-        <li><a href="#contacto" class="nav-btn" id="cta-nav">Reservar Ahora</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">♛ Royal<span>Rent</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#app">App</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="particles"></div>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
     <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Plataforma de Lujo Premium
-      </div>
-      <h1 class="hero-title">
-        El Lujo que<br />
-        <span class="gold-gradient">Mereces,</span><br />
-        Cuando Quieras
-      </h1>
-      <p class="hero-subtitle">
-        Accede a una selección exclusiva de vehículos premium, jets privados, yates, 
-        villas y servicios de alto standing — todo desde una sola plataforma.
-      </p>
-      <div class="hero-cta">
-        <a href="#categorias" class="btn-primary" id="hero-explore">
-          <i class="fa-solid fa-star"></i>
-          Explorar Servicios
-        </a>
-        <a href="#app" class="btn-secondary" id="hero-app">
-          <i class="fa-brands fa-android"></i>
-          Descargar App
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Servicios Exclusivos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Destinos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span>
-          <span class="stat-label">Satisfacción</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span class="scroll-text">Desliza para explorar</span>
-      <div class="scroll-arrow">
-        <i class="fa-solid fa-chevron-down"></i>
+      <span class="pill">Proyecto Fin de Ciclo · DAM</span>
+      <h1>El Lujo que Mereces,<br /><em>Cuando Quieras</em></h1>
+      <p>RoyalRent centraliza el alquiler de vehículos y servicios premium en una sola plataforma — web y app Android.</p>
+      <div class="hero-btns">
+        <a href="#servicios" class="btn-gold">Ver Servicios</a>
+        <a href="#app" class="btn-ghost">Descargar App</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== TRUST BAR ===== -->
-  <section class="trust-bar">
-    <div class="trust-container">
-      <div class="trust-item">
-        <i class="fa-solid fa-shield-halved"></i>
-        <span>Reservas 100% Seguras</span>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-item">
-        <i class="fa-solid fa-headset"></i>
-        <span>Soporte 24/7</span>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-item">
-        <i class="fa-solid fa-crown"></i>
-        <span>Servicios Premium Verificados</span>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-item">
-        <i class="fa-solid fa-rotate-left"></i>
-        <span>Cancelación Flexible</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICIOS / FEATURES ===== -->
-  <section class="servicios" id="servicios">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">¿Por qué RoyalRent?</span>
-        <h2 class="section-title">Una Experiencia <span class="gold">Sin Igual</span></h2>
-        <p class="section-desc">Diseñada para quienes exigen lo mejor. Cada detalle de RoyalRent está cuidado para ofrecerte una experiencia premium de principio a fin.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card" id="feat-search">
-          <div class="feature-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <h3>Búsqueda Avanzada</h3>
-          <p>Filtra por tipo de servicio, precio, ubicación y disponibilidad. Encuentra exactamente lo que buscas en segundos.</p>
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="wrap">
+      <h2 class="sec-title">Nuestros <span>Servicios</span></h2>
+      <p class="sec-sub">Todo lo que necesitas para una experiencia de lujo, en un solo lugar.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-car-side"></i>
+          <h3>Coches de Lujo</h3>
+          <p>Ferrari, Lamborghini, Rolls-Royce y más de 150 modelos premium.</p>
+          <span class="price">Desde 500€/día</span>
         </div>
-        <div class="feature-card" id="feat-booking">
-          <div class="feature-icon">
-            <i class="fa-solid fa-calendar-check"></i>
-          </div>
-          <h3>Reservas Instantáneas</h3>
-          <p>Sistema de reservas en tiempo real con confirmación inmediata y gestión completa de tu historial de bookings.</p>
+        <div class="service-card">
+          <i class="fa-solid fa-plane-departure"></i>
+          <h3>Jets Privados</h3>
+          <p>Vuelos personalizados a cualquier destino con la máxima comodidad.</p>
+          <span class="price">Consultar precio</span>
         </div>
-        <div class="feature-card" id="feat-reviews">
-          <div class="feature-icon">
-            <i class="fa-solid fa-star-half-stroke"></i>
-          </div>
-          <h3>Valoraciones Reales</h3>
-          <p>Sistema de reseñas verificadas de usuarios reales. Toma decisiones informadas con opiniones auténticas.</p>
+        <div class="service-card">
+          <i class="fa-solid fa-sailboat"></i>
+          <h3>Yates & Barcos</h3>
+          <p>Navega el Mediterráneo en embarcaciones exclusivas con tripulación.</p>
+          <span class="price">Desde 2.000€/día</span>
         </div>
-        <div class="feature-card" id="feat-secure">
-          <div class="feature-icon">
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          <h3>100% Seguro</h3>
-          <p>Sistema de autenticación robusto y pagos cifrados. Tu privacidad y seguridad son nuestra máxima prioridad.</p>
+        <div class="service-card">
+          <i class="fa-solid fa-helicopter"></i>
+          <h3>Helicópteros</h3>
+          <p>Traslados VIP y tours aéreos a destinos exclusivos.</p>
+          <span class="price">Desde 1.200€/h</span>
         </div>
-        <div class="feature-card" id="feat-mobile">
-          <div class="feature-icon">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-          </div>
-          <h3>App Nativa Android</h3>
-          <p>Aplicación móvil optimizada para Android con interfaz intuitiva para gestionar tus servicios desde cualquier lugar.</p>
+        <div class="service-card">
+          <i class="fa-solid fa-house-chimney"></i>
+          <h3>Villas & Mansiones</h3>
+          <p>Propiedades de lujo con piscina, personal y todos los servicios.</p>
+          <span class="price">Desde 1.500€/noche</span>
         </div>
-        <div class="feature-card" id="feat-admin">
-          <div class="feature-icon">
-            <i class="fa-solid fa-sliders"></i>
-          </div>
-          <h3>Panel de Administración</h3>
-          <p>Backend completo para gestionar usuarios, catálogo de servicios, reservas y moderación de valoraciones.</p>
+        <div class="service-card">
+          <i class="fa-solid fa-user-tie"></i>
+          <h3>Staff Premium</h3>
+          <p>Chefs privados, chóferes, seguridad personal y limpieza de élite.</p>
+          <span class="price">Desde 250€/día</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CATEGORÍAS ===== -->
-  <section class="categorias" id="categorias">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Nuestro Catálogo</span>
-        <h2 class="section-title">Todo el Lujo en <span class="gold">Un Solo Lugar</span></h2>
-        <p class="section-desc">Desde vehículos exclusivos hasta servicios personales premium, RoyalRent centraliza la excelencia.</p>
+  <!-- APP -->
+  <section class="section alt" id="app">
+    <div class="wrap">
+      <h2 class="sec-title">App <span>Android</span></h2>
+      <p class="sec-sub">Gestiona tus reservas, explora el catálogo y contacta con soporte desde tu móvil.</p>
+      <div class="app-features">
+        <div class="app-feat"><i class="fa-solid fa-magnifying-glass"></i><span>Búsqueda avanzada</span></div>
+        <div class="app-feat"><i class="fa-solid fa-calendar-check"></i><span>Reservas en tiempo real</span></div>
+        <div class="app-feat"><i class="fa-solid fa-star"></i><span>Valoraciones y reseñas</span></div>
+        <div class="app-feat"><i class="fa-solid fa-lock"></i><span>Login seguro</span></div>
+        <div class="app-feat"><i class="fa-solid fa-bell"></i><span>Notificaciones push</span></div>
+        <div class="app-feat"><i class="fa-solid fa-list-check"></i><span>Historial de reservas</span></div>
       </div>
-      <div class="cats-grid">
-
-        <div class="cat-card cat-featured" id="cat-cars">
-          <div class="cat-img-wrap">
-            <div class="cat-img" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
-              <i class="fa-solid fa-car-side cat-icon-large"></i>
-            </div>
-          </div>
-          <div class="cat-info">
-            <span class="cat-badge">Más Popular</span>
-            <h3>Coches de Lujo</h3>
-            <p>Ferrari, Lamborghini, Bentley, Rolls-Royce y más. Conduce el carro de tus sueños.</p>
-            <div class="cat-meta">
-              <span><i class="fa-solid fa-tag"></i> Desde 500€/día</span>
-              <span><i class="fa-solid fa-car"></i> +150 modelos</span>
-            </div>
-            <a href="#contacto" class="cat-btn" id="cat-cars-btn">Ver Catálogo →</a>
-          </div>
-        </div>
-
-        <div class="cat-card" id="cat-jets">
-          <div class="cat-img" style="background: linear-gradient(135deg, #0f3460 0%, #533483 100%);">
-            <i class="fa-solid fa-plane-departure cat-icon-large"></i>
-          </div>
-          <div class="cat-info">
-            <h3>Jets Privados</h3>
-            <p>Viaja en tu propio avión privado. Rutas personalizadas a tu medida.</p>
-            <div class="cat-meta">
-              <span><i class="fa-solid fa-tag"></i> Consultar precio</span>
-            </div>
-            <a href="#contacto" class="cat-btn-sm" id="cat-jets-btn">Consultar →</a>
-          </div>
-        </div>
-
-        <div class="cat-card" id="cat-yachts">
-          <div class="cat-img" style="background: linear-gradient(135deg, #004e92 0%, #000428 100%);">
-            <i class="fa-solid fa-sailboat cat-icon-large"></i>
-          </div>
-          <div class="cat-info">
-            <h3>Yates & Barcos</h3>
-            <p>Navega por el Mediterráneo en embarcaciones de lujo con tripulación incluida.</p>
-            <div class="cat-meta">
-              <span><i class="fa-solid fa-tag"></i> Desde 2.000€/día</span>
-            </div>
-            <a href="#contacto" class="cat-btn-sm" id="cat-yachts-btn">Consultar →</a>
-          </div>
-        </div>
-
-        <div class="cat-card" id="cat-helicopters">
-          <div class="cat-img" style="background: linear-gradient(135deg, #1d1d1d 0%, #3d3d3d 100%);">
-            <i class="fa-solid fa-helicopter cat-icon-large"></i>
-          </div>
-          <div class="cat-info">
-            <h3>Helicópteros</h3>
-            <p>Traslados VIP, tours aéreos y transporte de alta gama a destinos exclusivos.</p>
-            <div class="cat-meta">
-              <span><i class="fa-solid fa-tag"></i> Desde 1.200€/h</span>
-            </div>
-            <a href="#contacto" class="cat-btn-sm" id="cat-heli-btn">Consultar →</a>
-          </div>
-        </div>
-
-        <div class="cat-card" id="cat-villas">
-          <div class="cat-img" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);">
-            <i class="fa-solid fa-house-chimney cat-icon-large"></i>
-          </div>
-          <div class="cat-info">
-            <h3>Villas & Mansiones</h3>
-            <p>Propiedades exclusivas con piscina, personal y los más altos estándares de confort.</p>
-            <div class="cat-meta">
-              <span><i class="fa-solid fa-tag"></i> Desde 1.500€/noche</span>
-            </div>
-            <a href="#contacto" class="cat-btn-sm" id="cat-villa-btn">Consultar →</a>
-          </div>
-        </div>
-
-        <div class="cat-card" id="cat-staff">
-          <div class="cat-img" style="background: linear-gradient(135deg, #373b44 0%, #4286f4 100%);">
-            <i class="fa-solid fa-user-tie cat-icon-large"></i>
-          </div>
-          <div class="cat-info">
-            <h3>Staff Premium</h3>
-            <p>Chefs privados, chóferes, seguridad personal y servicio de limpieza de élite.</p>
-            <div class="cat-meta">
-              <span><i class="fa-solid fa-tag"></i> Desde 250€/día</span>
-            </div>
-            <a href="#contacto" class="cat-btn-sm" id="cat-staff-btn">Consultar →</a>
-          </div>
-        </div>
-
+      <div class="tech-row">
+        <span class="tech"><i class="fa-brands fa-android"></i> Android Studio</span>
+        <span class="tech">Kotlin / Java</span>
+        <span class="tech"><i class="fa-solid fa-database"></i> Firebase</span>
+        <span class="tech">MySQL</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== CÓMO FUNCIONA ===== -->
-  <section class="como-funciona" id="como-funciona">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Proceso Simple</span>
-        <h2 class="section-title">Reserva en <span class="gold">3 Pasos</span></h2>
-      </div>
-      <div class="steps-container">
-        <div class="step" id="step-1">
-          <div class="step-number">01</div>
-          <div class="step-icon"><i class="fa-solid fa-user-plus"></i></div>
-          <h3>Regístrate</h3>
-          <p>Crea tu cuenta en segundos en la app o web. Acceso inmediato a todo el catálogo premium.</p>
-        </div>
-        <div class="step-connector">
-          <div class="connector-line"></div>
-          <div class="connector-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </div>
-        <div class="step" id="step-2">
-          <div class="step-number">02</div>
-          <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <h3>Explora y Elige</h3>
-          <p>Navega por nuestro catálogo exclusivo, filtra según tus necesidades y consulta todos los detalles.</p>
-        </div>
-        <div class="step-connector">
-          <div class="connector-line"></div>
-          <div class="connector-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </div>
-        <div class="step" id="step-3">
-          <div class="step-number">03</div>
-          <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <h3>Reserva y Disfruta</h3>
-          <p>Confirma tu reserva de forma segura y prepárate para vivir una experiencia única.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== APP SECTION ===== -->
-  <section class="app-section" id="app">
-    <div class="container">
-      <div class="app-grid">
-        <div class="app-content">
-          <span class="section-tag">Disponible Ahora</span>
-          <h2 class="section-title">Tu Experiencia<br /><span class="gold">en el Bolsillo</span></h2>
-          <p class="app-desc">
-            La app nativa de RoyalRent para Android te permite gestionar todas tus reservas, 
-            explorar el catálogo completo y contactar con nuestro equipo de soporte estés donde estés.
-          </p>
-          <ul class="app-features-list">
-            <li><i class="fa-solid fa-check-circle"></i> Interfaz intuitiva y elegante</li>
-            <li><i class="fa-solid fa-check-circle"></i> Historial completo de reservas</li>
-            <li><i class="fa-solid fa-check-circle"></i> Notificaciones en tiempo real</li>
-            <li><i class="fa-solid fa-check-circle"></i> Valoraciones y reseñas integradas</li>
-            <li><i class="fa-solid fa-check-circle"></i> Búsqueda avanzada con filtros</li>
-            <li><i class="fa-solid fa-check-circle"></i> Login seguro y gestión de perfil</li>
-          </ul>
-          <div class="app-download">
-            <a href="#" class="download-btn" id="download-android">
-              <i class="fa-brands fa-google-play"></i>
-              <div>
-                <span class="download-sub">Disponible en</span>
-                <span class="download-main">Google Play</span>
-              </div>
-            </a>
-          </div>
-          <div class="tech-stack">
-            <span class="tech-label">Desarrollado con:</span>
-            <div class="tech-badges">
-              <span class="tech-badge"><i class="fa-brands fa-android"></i> Android Studio</span>
-              <span class="tech-badge">Kotlin / Java</span>
-              <span class="tech-badge">Firebase</span>
-              <span class="tech-badge">MySQL</span>
-            </div>
-          </div>
-        </div>
-        <div class="app-mockup-wrap">
-          <div class="app-glow"></div>
-          <div class="app-phone">
-            <div class="phone-screen">
-              <div class="phone-ui">
-                <div class="phone-header">
-                  <span class="phone-logo">♛ RoyalRent</span>
-                  <i class="fa-solid fa-bell"></i>
-                </div>
-                <div class="phone-search">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <span>Buscar servicios...</span>
-                </div>
-                <div class="phone-cats">
-                  <div class="phone-cat active"><i class="fa-solid fa-car-side"></i></div>
-                  <div class="phone-cat"><i class="fa-solid fa-plane"></i></div>
-                  <div class="phone-cat"><i class="fa-solid fa-sailboat"></i></div>
-                  <div class="phone-cat"><i class="fa-solid fa-helicopter"></i></div>
-                </div>
-                <div class="phone-card">
-                  <div class="phone-card-img">
-                    <i class="fa-solid fa-car-side"></i>
-                  </div>
-                  <div class="phone-card-info">
-                    <span class="phone-card-title">Lamborghini Urus</span>
-                    <span class="phone-card-price">€850/día</span>
-                    <span class="phone-card-stars">★★★★★</span>
-                  </div>
-                </div>
-                <div class="phone-card">
-                  <div class="phone-card-img" style="background: linear-gradient(135deg, #0f3460, #533483)">
-                    <i class="fa-solid fa-plane-departure"></i>
-                  </div>
-                  <div class="phone-card-info">
-                    <span class="phone-card-title">Jet Privado G650</span>
-                    <span class="phone-card-price">Consultar</span>
-                    <span class="phone-card-stars">★★★★★</span>
-                  </div>
-                </div>
-                <a class="phone-btn">Reservar Ahora</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== EQUIPO ===== -->
-  <section class="equipo" id="equipo">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Los Creadores</span>
-        <h2 class="section-title">Nuestro <span class="gold">Equipo</span></h2>
-        <p class="section-desc">Proyecto Fin de Ciclo desarrollado por dos apasionados del desarrollo de aplicaciones multiplataforma.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card" id="team-gonzalo">
-          <div class="team-avatar">
-            <div class="avatar-circle">
-              <span class="avatar-initials">GV</span>
-            </div>
-            <div class="avatar-ring"></div>
-          </div>
+  <!-- EQUIPO -->
+  <section class="section" id="equipo">
+    <div class="wrap">
+      <h2 class="sec-title">El <span>Equipo</span></h2>
+      <p class="sec-sub">PFC desarrollado por dos estudiantes de Desarrollo de Aplicaciones Multiplataforma.</p>
+      <div class="team-row">
+        <div class="team-card">
+          <div class="avatar gold-av">GV</div>
           <h3>Gonzalo Velasco</h3>
-          <span class="team-role">Desarrollador Full-Stack</span>
-          <p>Especializado en desarrollo Android y sistemas de backend robustos. Apasionado por las interfaces de usuario de alta calidad.</p>
-          <div class="team-skills">
-            <span class="skill-tag">Android</span>
-            <span class="skill-tag">Java/Kotlin</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Firebase</span>
-          </div>
-          <div class="team-social">
-            <a href="#" class="social-icon" aria-label="GitHub Gonzalo"><i class="fa-brands fa-github"></i></a>
-            <a href="#" class="social-icon" aria-label="LinkedIn Gonzalo"><i class="fa-brands fa-linkedin"></i></a>
+          <p>Desarrollo Android · Backend · MySQL</p>
+          <div class="tags">
+            <span>Android</span><span>Java/Kotlin</span><span>MySQL</span>
           </div>
         </div>
-        <div class="team-card" id="team-miguel">
-          <div class="team-avatar">
-            <div class="avatar-circle" style="background: linear-gradient(135deg, #7b2d8b, #4a1fa0)">
-              <span class="avatar-initials">MJ</span>
-            </div>
-            <div class="avatar-ring"></div>
-          </div>
+        <div class="team-card">
+          <div class="avatar purple-av">MJ</div>
           <h3>Miguel José</h3>
-          <span class="team-role">Desarrollador Full-Stack</span>
-          <p>Experto en desarrollo web y arquitectura de aplicaciones. Enfocado en crear experiencias de usuario excepcionales y escalables.</p>
-          <div class="team-skills">
-            <span class="skill-tag">HTML/CSS/JS</span>
-            <span class="skill-tag">Android</span>
-            <span class="skill-tag">Firebase</span>
-            <span class="skill-tag">UI/UX</span>
-          </div>
-          <div class="team-social">
-            <a href="#" class="social-icon" aria-label="GitHub Miguel"><i class="fa-brands fa-github"></i></a>
-            <a href="#" class="social-icon" aria-label="LinkedIn Miguel"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="pi-card">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <div>
-            <span class="pi-title">Proyecto Fin de Ciclo</span>
-            <span class="pi-desc">Desarrollo de Aplicaciones Multiplataforma (DAM)</span>
-          </div>
-        </div>
-        <div class="pi-card">
-          <i class="fa-solid fa-code-branch"></i>
-          <div>
-            <span class="pi-title">Control de Versiones</span>
-            <span class="pi-desc">Git & GitHub para colaboración y seguimiento</span>
-          </div>
-        </div>
-        <div class="pi-card">
-          <i class="fa-solid fa-cloud"></i>
-          <div>
-            <span class="pi-title">Despliegue</span>
-            <span class="pi-desc">Servidores web y cloud con soporte Docker</span>
+          <p>Desarrollo Web · UI/UX · Firebase</p>
+          <div class="tags">
+            <span>HTML/CSS/JS</span><span>Firebase</span><span>UI/UX</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Preguntas Frecuentes</span>
-        <h2 class="section-title">Todo lo que <span class="gold">Necesitas Saber</span></h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item" id="faq-1">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Cómo funciona el sistema de reservas?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>El proceso es muy sencillo: regístrate en la plataforma, explora nuestro catálogo de servicios premium, selecciona el servicio que deseas y elige las fechas disponibles. Una vez confirmada la reserva, recibirás una notificación con todos los detalles.</p>
-          </div>
+  <!-- CONTACTO -->
+  <section class="section alt" id="contacto">
+    <div class="wrap narrow">
+      <h2 class="sec-title">¿Hablamos?</h2>
+      <p class="sec-sub">Cualquier consulta sobre el proyecto o los servicios, escríbenos.</p>
+      <form class="form" id="contactForm">
+        <div class="form-row">
+          <input type="text" id="nombre" placeholder="Tu nombre" required />
+          <input type="email" id="email" placeholder="Tu email" required />
         </div>
-        <div class="faq-item" id="faq-2">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Está disponible la app en iOS?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Actualmente, RoyalRent está disponible como aplicación nativa para Android. También puedes acceder a todas las funcionalidades a través de nuestra web desde cualquier dispositivo.</p>
-          </div>
+        <textarea id="mensaje" placeholder="Tu mensaje..." rows="4" required></textarea>
+        <button type="submit" class="btn-gold" id="submitBtn">
+          <i class="fa-solid fa-paper-plane"></i> Enviar
+        </button>
+        <div class="success" id="success">
+          <i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado! Te respondemos pronto.
         </div>
-        <div class="faq-item" id="faq-3">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Cómo sé que los servicios son de calidad?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Todos los servicios listados en RoyalRent pasan por un riguroso proceso de verificación. Además, contamos con un sistema de valoraciones y reseñas reales de usuarios que han utilizado los servicios, garantizando la transparencia y calidad.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-4">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Puedo cancelar o modificar una reserva?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, ofrecemos una política de cancelación flexible. Puedes gestionar tus reservas directamente desde la app o la web. Las condiciones específicas de cancelación varían según el tipo de servicio, y se detallan claramente antes de confirmar la reserva.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-5">
-          <button class="faq-question" aria-expanded="false">
-            <span>¿Mis datos personales están seguros?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>La seguridad es nuestra prioridad. RoyalRent utiliza sistemas de autenticación robustos, cifrado de datos y cumple con todas las normativas de protección de datos vigentes. Tus datos personales y de pago están siempre protegidos.</p>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   </section>
 
-  <!-- ===== CONTACTO ===== -->
-  <section class="contacto" id="contacto">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <span class="section-tag">Contáctanos</span>
-          <h2 class="section-title">¿Listo para la <span class="gold">Experiencia Real?</span></h2>
-          <p>Ya sea que tengas preguntas sobre nuestros servicios, quieras conocer más sobre el proyecto o necesites soporte, nuestro equipo está aquí para ayudarte.</p>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <span class="contact-label">Email</span>
-                <span class="contact-value">info@royalrent.es</span>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <span class="contact-label">Teléfono</span>
-                <span class="contact-value">+34 900 123 456</span>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <span class="contact-label">Sede</span>
-                <span class="contact-value">España · Disponible Online</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form-wrap">
-          <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
-              </div>
-              <div class="form-group">
-                <label for="email-contact">Email</label>
-                <input type="email" id="email-contact" name="email" placeholder="tu@email.com" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="asunto">Asunto</label>
-              <select id="asunto" name="asunto">
-                <option value="">Selecciona un asunto</option>
-                <option value="reserva">Información sobre reservas</option>
-                <option value="servicio">Consulta de servicio</option>
-                <option value="soporte">Soporte técnico</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn-primary btn-form" id="submit-contact">
-              <i class="fa-solid fa-paper-plane"></i>
-              Enviar Mensaje
-            </button>
-            <div class="form-success" id="form-success">
-              <i class="fa-solid fa-circle-check"></i>
-              ¡Mensaje enviado! Te responderemos pronto.
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo footer-logo">
-          <span class="logo-crown">♛</span>
-          <span class="logo-text">Royal<span class="gold">Rent</span></span>
-        </a>
-        <p class="footer-tagline">La plataforma definitiva para el alquiler de servicios y vehículos de lujo.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Servicios</h4>
-          <ul>
-            <li><a href="#categorias">Coches de Lujo</a></li>
-            <li><a href="#categorias">Jets Privados</a></li>
-            <li><a href="#categorias">Yates & Barcos</a></li>
-            <li><a href="#categorias">Helicópteros</a></li>
-            <li><a href="#categorias">Villas & Mansiones</a></li>
-            <li><a href="#categorias">Staff Premium</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Plataforma</h4>
-          <ul>
-            <li><a href="#servicios">Funcionalidades</a></li>
-            <li><a href="#como-funciona">Cómo Funciona</a></li>
-            <li><a href="#app">App Android</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Proyecto</h4>
-          <ul>
-            <li><a href="#equipo">El Equipo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-            <li><a href="#">Términos de Uso</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 RoyalRent. Desarrollado por <strong>Gonzalo Velasco</strong> & <strong>Miguel José</strong> · PFC DAM.</p>
+    <span class="logo">♛ Royal<span>Rent</span></span>
+    <p>© 2025 RoyalRent · Gonzalo Velasco & Miguel José · PFC DAM</p>
+    <div class="foot-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#app">App</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contacto">Contacto</a>
     </div>
   </footer>
 
