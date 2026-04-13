@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios — RoyalRent</title>
+  <meta name="description" content="Explora el catálogo completo de RoyalRent. Coches de lujo, jets privados, yates, helicópteros, villas y staff premium." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="servicios.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav solid" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">♛ Royal<span>Rent</span></a>
+      <div class="nav-links" id="navLinks">
+        <span class="nav-mobile-logo">♛ Royal<span>Rent</span></span>
+        <div class="nav-mobile-sep"></div>
+        <a href="servicios.html" class="active-link">Servicios</a>
+        <a href="index.html#app">App</a>
+        <a href="index.html#equipo">Equipo</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span>/</span>
+        <span>Servicios</span>
+      </div>
+      <h1>Catálogo de <em>Servicios</em></h1>
+      <p>Elige tu categoría y descubre nuestra selección exclusiva de servicios premium.</p>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="tab active" data-cat="all" id="tab-all">Todos</button>
+        <button class="tab" data-cat="coches" id="tab-coches"><i class="fa-solid fa-car-side"></i> Coches</button>
+        <button class="tab" data-cat="jets" id="tab-jets"><i class="fa-solid fa-plane-departure"></i> Jets</button>
+        <button class="tab" data-cat="yates" id="tab-yates"><i class="fa-solid fa-sailboat"></i> Yates</button>
+        <button class="tab" data-cat="helicopteros" id="tab-heli"><i class="fa-solid fa-helicopter"></i> Helicópteros</button>
+        <button class="tab" data-cat="villas" id="tab-villas"><i class="fa-solid fa-house-chimney"></i> Villas</button>
+        <button class="tab" data-cat="staff" id="tab-staff"><i class="fa-solid fa-user-tie"></i> Staff</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cat-main">
+    <div class="wrap">
+
+      <!-- ===== COCHES ===== -->
+      <section class="cat-section" data-cat="coches" id="coches">
+        <div class="cat-header">
+          <div class="cat-title-wrap">
+            <div class="cat-icon-wrap"><i class="fa-solid fa-car-side"></i></div>
+            <div>
+              <h2>Coches de Lujo</h2>
+              <span>150+ vehículos disponibles</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-grid">
+
+          <div class="listing-card" id="coche-lamborghini">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a0a00, #3d1a00);">
+              <i class="fa-solid fa-car-side"></i>
+              <span class="listing-badge">Más Popular</span>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Lamborghini Huracán</h3>
+                <div class="listing-stars">★★★★★ <span>4.9</span></div>
+              </div>
+              <p>610 CV · V10 · Automático · 2 plazas. La experiencia de conducción más emocionante en carretera.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-gauge-high"></i> 0–100 en 2.9s</span>
+                <span><i class="fa-solid fa-road"></i> RWD</span>
+                <span><i class="fa-solid fa-users"></i> 2 plazas</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">850€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="coche-ferrari">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a0000, #4a0000);">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Ferrari 488 GTB</h3>
+                <div class="listing-stars">★★★★★ <span>5.0</span></div>
+              </div>
+              <p>670 CV · Biturbo V8 · Rojo Ferrari. El icono italiano redefinido para la era moderna.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-gauge-high"></i> 0–100 en 3.0s</span>
+                <span><i class="fa-solid fa-road"></i> RWD</span>
+                <span><i class="fa-solid fa-users"></i> 2 plazas</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">950€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="coche-rolls">
+            <div class="listing-img" style="background: linear-gradient(135deg, #0d0d1a, #1a1a3d);">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Rolls-Royce Ghost</h3>
+                <div class="listing-stars">★★★★★ <span>4.8</span></div>
+              </div>
+              <p>563 CV · V12 Biturbo · Refinamiento absoluto. El estándar de la elegancia automovilística.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-gauge-high"></i> 0–100 en 4.8s</span>
+                <span><i class="fa-solid fa-road"></i> AWD</span>
+                <span><i class="fa-solid fa-users"></i> 5 plazas</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">1.200€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="coche-bentley">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001a0d, #003d1a);">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Bentley Continental GT</h3>
+                <div class="listing-stars">★★★★☆ <span>4.7</span></div>
+              </div>
+              <p>635 CV · W12 biturbo · Gran Turismo. La fusión perfecta entre lujo y deportividad.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-gauge-high"></i> 0–100 en 3.6s</span>
+                <span><i class="fa-solid fa-road"></i> AWD</span>
+                <span><i class="fa-solid fa-users"></i> 4 plazas</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">800€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== JETS ===== -->
+      <section class="cat-section" data-cat="jets" id="jets">
+        <div class="cat-header">
+          <div class="cat-title-wrap">
+            <div class="cat-icon-wrap"><i class="fa-solid fa-plane-departure"></i></div>
+            <div>
+              <h2>Jets Privados</h2>
+              <span>Rutas personalizadas · Consultar disponibilidad</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-grid">
+
+          <div class="listing-card" id="jet-gulfstream">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001433, #003380);">
+              <i class="fa-solid fa-plane-departure"></i>
+              <span class="listing-badge listing-badge-premium">Ultra Premium</span>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Gulfstream G650ER</h3>
+                <div class="listing-stars">★★★★★ <span>5.0</span></div>
+              </div>
+              <p>El jet corporativo más rápido del mundo. Alcance transoceánico, cabina amplia para 19 pasajeros.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-location-dot"></i> Alcance 13.890 km</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 19 pax</span>
+                <span><i class="fa-solid fa-gauge-high"></i> Mach 0.925</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price-consult">Precio bajo consulta</div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="jet-citation">
+            <div class="listing-img" style="background: linear-gradient(135deg, #0a0a2e, #1a1a5e);">
+              <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Citation XLS+</h3>
+                <div class="listing-stars">★★★★★ <span>4.8</span></div>
+              </div>
+              <p>Perfecto para vuelos europeos. Cabina silenciosa, amplio maletero y cabina para 9 pasajeros.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-location-dot"></i> Alcance 3.705 km</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 9 pax</span>
+                <span><i class="fa-solid fa-gauge-high"></i> 858 km/h</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price-consult">Precio bajo consulta</div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="jet-global">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a0a33, #3d1a70);">
+              <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Bombardier Global 7500</h3>
+                <div class="listing-stars">★★★★★ <span>4.9</span></div>
+              </div>
+              <p>El jet de cabina más grande del mundo. 4 zonas de vida, dormitorio, ducha y cocina a bordo.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-location-dot"></i> Alcance 14.260 km</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 19 pax</span>
+                <span><i class="fa-solid fa-gauge-high"></i> Mach 0.925</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price-consult">Precio bajo consulta</div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== YATES ===== -->
+      <section class="cat-section" data-cat="yates" id="yates">
+        <div class="cat-header">
+          <div class="cat-title-wrap">
+            <div class="cat-icon-wrap"><i class="fa-solid fa-sailboat"></i></div>
+            <div>
+              <h2>Yates & Barcos</h2>
+              <span>Mediterráneo · Costa Atlántica · Con tripulación</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-grid">
+
+          <div class="listing-card" id="yate-sunseeker">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001433, #004d99);">
+              <i class="fa-solid fa-sailboat"></i>
+              <span class="listing-badge">Top Verano</span>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Sunseeker Predator 75</h3>
+                <div class="listing-stars">★★★★★ <span>4.9</span></div>
+              </div>
+              <p>23 m de eslora · 3 camarotes · Tripulación de 2. Ideal para cruceros por Ibiza y Formentera.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-ruler-horizontal"></i> 23 metros</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 10 pax</span>
+                <span><i class="fa-solid fa-bed"></i> 3 camarotes</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">2.500€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="yate-azimut">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001a40, #003380);">
+              <i class="fa-solid fa-sailboat"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Azimut Grande 80</h3>
+                <div class="listing-stars">★★★★★ <span>4.8</span></div>
+              </div>
+              <p>24 m · Fly Open · 4 camarotes suite. Diseño italiano con acabados de ultra lujo.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-ruler-horizontal"></i> 24 metros</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 12 pax</span>
+                <span><i class="fa-solid fa-bed"></i> 4 camarotes</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">3.200€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="yate-ferretti">
+            <div class="listing-img" style="background: linear-gradient(135deg, #000d26, #002060);">
+              <i class="fa-solid fa-sailboat"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Ferretti 780</h3>
+                <div class="listing-stars">★★★★☆ <span>4.6</span></div>
+              </div>
+              <p>23.7 m · Sport Flybridge · 3 suites. Combinación perfecta de rendimiento y elegancia.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-ruler-horizontal"></i> 23.7 metros</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 10 pax</span>
+                <span><i class="fa-solid fa-bed"></i> 3 suites</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">2.800€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== HELICÓPTEROS ===== -->
+      <section class="cat-section" data-cat="helicopteros" id="helicopteros">
+        <div class="cat-header">
+          <div class="cat-title-wrap">
+            <div class="cat-icon-wrap"><i class="fa-solid fa-helicopter"></i></div>
+            <div>
+              <h2>Helicópteros</h2>
+              <span>Traslados VIP · Tours aéreos · Aeropuerto</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-grid">
+
+          <div class="listing-card" id="heli-agusta">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a1a00, #3d3d00);">
+              <i class="fa-solid fa-helicopter"></i>
+              <span class="listing-badge">VIP</span>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>AgustaWestland AW109</h3>
+                <div class="listing-stars">★★★★★ <span>5.0</span></div>
+              </div>
+              <p>El helicóptero ejecutivo por excelencia. Cabina completamente equipada para 6 pasajeros VIP.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-users"></i> Hasta 6 pax</span>
+                <span><i class="fa-solid fa-gauge-high"></i> 285 km/h</span>
+                <span><i class="fa-solid fa-location-dot"></i> 935 km alcance</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">1.500€<span>/hora</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="heli-bell">
+            <div class="listing-img" style="background: linear-gradient(135deg, #0d1a00, #1a3300);">
+              <i class="fa-solid fa-helicopter"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Bell 429</h3>
+                <div class="listing-stars">★★★★★ <span>4.7</span></div>
+              </div>
+              <p>Bimotor ligero de alto rendimiento. Ideal para traslados aeropuerto-ciudad y viajes corporativos.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-users"></i> Hasta 7 pax</span>
+                <span><i class="fa-solid fa-gauge-high"></i> 278 km/h</span>
+                <span><i class="fa-solid fa-location-dot"></i> 722 km alcance</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">1.200€<span>/hora</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="heli-airbus">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001a1a, #003d3d);">
+              <i class="fa-solid fa-helicopter"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Airbus H145</h3>
+                <div class="listing-stars">★★★★☆ <span>4.5</span></div>
+              </div>
+              <p>Helicóptero bimotor versátil. Tours panorámicos de montaña y traslados en zonas remotas.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-users"></i> Hasta 9 pax</span>
+                <span><i class="fa-solid fa-gauge-high"></i> 268 km/h</span>
+                <span><i class="fa-solid fa-location-dot"></i> 680 km alcance</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">1.000€<span>/hora</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== VILLAS ===== -->
+      <section class="cat-section" data-cat="villas" id="villas">
+        <div class="cat-header">
+          <div class="cat-title-wrap">
+            <div class="cat-icon-wrap"><i class="fa-solid fa-house-chimney"></i></div>
+            <div>
+              <h2>Villas & Mansiones</h2>
+              <span>Con personal · Piscina · Máxima privacidad</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-grid">
+
+          <div class="listing-card" id="villa-marbella">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001a0a, #003d1a);">
+              <i class="fa-solid fa-house-chimney"></i>
+              <span class="listing-badge">Exclusivo</span>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Villa Marbella Sunset</h3>
+                <div class="listing-stars">★★★★★ <span>5.0</span></div>
+              </div>
+              <p>800 m² · 6 dormitorios · Piscina infinita con vistas al mar. Personal de servicio incluido.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-bed"></i> 6 habitaciones</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 14 pax</span>
+                <span><i class="fa-solid fa-water"></i> Piscina infinita</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">3.500€<span>/noche</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="villa-ibiza">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a0033, #3d0070);">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Mansión Can Rimbau, Ibiza</h3>
+                <div class="listing-stars">★★★★★ <span>4.9</span></div>
+              </div>
+              <p>1.200 m² · 8 suites · Chill-out, spa y vistas panorámicas a Ibiza. A 5 min en coche del puerto.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-bed"></i> 8 suites</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 16 pax</span>
+                <span><i class="fa-solid fa-spa"></i> Spa privado</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">5.800€<span>/noche</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="villa-mallorca">
+            <div class="listing-img" style="background: linear-gradient(135deg, #001a33, #003d6b);">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Finca Son Vida, Mallorca</h3>
+                <div class="listing-stars">★★★★☆ <span>4.6</span></div>
+              </div>
+              <p>600 m² · 5 habitaciones · Jardines mediterráneos, piscina y cancha de tenis privada.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-bed"></i> 5 habitaciones</span>
+                <span><i class="fa-solid fa-users"></i> Hasta 10 pax</span>
+                <span><i class="fa-solid fa-table-tennis-paddle-ball"></i> Tenis privado</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">2.200€<span>/noche</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== STAFF ===== -->
+      <section class="cat-section" data-cat="staff" id="staff">
+        <div class="cat-header">
+          <div class="cat-title-wrap">
+            <div class="cat-icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
+            <div>
+              <h2>Staff Premium</h2>
+              <span>Profesionales verificados · Disponibilidad 24/7</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-grid">
+
+          <div class="listing-card" id="staff-chef">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a0a00, #3d2200);">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Chef Ejecutivo Privado</h3>
+                <div class="listing-stars">★★★★★ <span>5.0</span></div>
+              </div>
+              <p>Chefs con experiencia en restaurantes Michelin. Menús personalizados para cualquier evento o servicio diario.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-star"></i> Nivel Michelin</span>
+                <span><i class="fa-solid fa-clock"></i> Disponible 24/7</span>
+                <span><i class="fa-solid fa-globe"></i> Cocina internacional</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">400€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="staff-chofer">
+            <div class="listing-img" style="background: linear-gradient(135deg, #0d0d1a, #1a1a3d);">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Chófer de Lujo</h3>
+                <div class="listing-stars">★★★★★ <span>4.9</span></div>
+              </div>
+              <p>Conductores discretos, multilingües y formados en protocolos VIP. Vehículo incluido opcional.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-language"></i> Multilingüe</span>
+                <span><i class="fa-solid fa-clock"></i> 24/7</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Protocolo VIP</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">280€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" id="staff-seguridad">
+            <div class="listing-img" style="background: linear-gradient(135deg, #1a0000, #3d0000);">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="listing-info">
+              <div class="listing-top">
+                <h3>Seguridad Personal</h3>
+                <div class="listing-stars">★★★★★ <span>4.8</span></div>
+              </div>
+              <p>Agentes de seguridad certificados con experiencia en protección de altos ejecutivos y celebridades.</p>
+              <div class="listing-specs">
+                <span><i class="fa-solid fa-certificate"></i> Certificados</span>
+                <span><i class="fa-solid fa-clock"></i> 24/7</span>
+                <span><i class="fa-solid fa-users"></i> Equipo o individual</span>
+              </div>
+              <div class="listing-footer">
+                <div class="listing-price">350€<span>/día</span></div>
+                <a href="index.html#contacto" class="btn-listing">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- CTA FINAL -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>¿No encuentras lo que buscas?</h2>
+      <p>Nuestro equipo puede conseguirte cualquier servicio de lujo personalizado. Contáctanos.</p>
+      <a href="index.html#contacto" class="btn-gold">Contactar ahora</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="logo">♛ Royal<span>Rent</span></span>
+    <p>© 2025 RoyalRent · Gonzalo Velasco & Miguel José · PFC DAM</p>
+    <div class="foot-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="index.html#equipo">Equipo</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="servicios.js"></script>
+</body>
+</html>

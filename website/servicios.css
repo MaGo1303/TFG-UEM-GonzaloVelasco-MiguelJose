@@ -1,0 +1,243 @@
+/* ============================
+   SERVICIOS.CSS — Estilos del catálogo
+   ============================ */
+
+/* ---- ACTIVE NAV LINK ---- */
+.active-link { color: var(--gold) !important; }
+
+/* ---- PAGE HEADER ---- */
+.page-header {
+  background: var(--dark2);
+  border-bottom: 1px solid var(--border2);
+  padding: 100px 0 0;
+}
+.page-header .wrap { padding-bottom: 0; }
+
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; color: var(--faint);
+  margin-bottom: 20px;
+}
+.breadcrumb a {
+  color: var(--muted); text-decoration: none;
+  transition: var(--ease);
+}
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb i { font-size: 0.7rem; }
+
+.page-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700; line-height: 1.1;
+  margin-bottom: 14px;
+}
+.page-header > .wrap > p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 36px;
+}
+
+/* ---- FILTER TABS ---- */
+.filter-tabs {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding-top: 4px;
+  border-top: 1px solid var(--border2);
+  padding-top: 0;
+  margin-top: 8px;
+}
+.tab {
+  display: flex; align-items: center; gap: 7px;
+  background: none; border: none;
+  color: var(--muted); font-family: var(--sans);
+  font-size: 0.85rem; font-weight: 500;
+  padding: 14px 18px; cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--ease);
+  white-space: nowrap;
+}
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.tab i { font-size: 0.8rem; }
+
+/* ---- MAIN CONTENT ---- */
+.cat-main { padding: 60px 0 80px; }
+
+/* ---- CATEGORY SECTION ---- */
+.cat-section {
+  margin-bottom: 80px;
+  transition: var(--ease);
+}
+.cat-section.hidden { display: none; }
+
+.cat-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border2);
+}
+.cat-title-wrap {
+  display: flex; align-items: center; gap: 18px;
+}
+.cat-icon-wrap {
+  width: 48px; height: 48px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.cat-title-wrap h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--text); margin-bottom: 3px;
+}
+.cat-title-wrap span {
+  font-size: 0.78rem; color: var(--faint);
+}
+
+/* ---- LISTING GRID ---- */
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+/* ---- LISTING CARD ---- */
+.listing-card {
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: var(--ease);
+  display: flex; flex-direction: column;
+}
+.listing-card:hover {
+  border-color: var(--border);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+}
+
+/* Card image area */
+.listing-img {
+  height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.listing-img i {
+  font-size: 3rem;
+  color: rgba(255,255,255,0.12);
+  transition: var(--ease);
+}
+.listing-card:hover .listing-img i {
+  color: rgba(255,255,255,0.22);
+  transform: scale(1.08);
+}
+.listing-badge {
+  position: absolute; top: 12px; left: 12px;
+  font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: #0a0d14;
+  background: var(--gold);
+  padding: 4px 10px; border-radius: 100px;
+}
+.listing-badge-premium {
+  background: linear-gradient(90deg, #e8d5b7, #c9a84c);
+}
+
+/* Card info */
+.listing-info {
+  padding: 22px 20px 20px;
+  flex: 1; display: flex; flex-direction: column; gap: 10px;
+}
+.listing-top {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;
+}
+.listing-top h3 {
+  font-family: var(--serif);
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); line-height: 1.3;
+}
+.listing-stars {
+  font-size: 0.72rem; color: var(--gold);
+  white-space: nowrap; flex-shrink: 0;
+}
+.listing-stars span { color: var(--muted); }
+
+.listing-info > p {
+  font-size: 0.83rem; color: var(--muted);
+  line-height: 1.55;
+}
+
+.listing-specs {
+  display: flex; flex-direction: column; gap: 5px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+}
+.listing-specs span {
+  font-size: 0.78rem; color: var(--faint);
+  display: flex; align-items: center; gap: 8px;
+}
+.listing-specs i { color: var(--gold); width: 12px; font-size: 0.72rem; }
+
+.listing-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.listing-price {
+  font-family: var(--serif);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--gold);
+}
+.listing-price span {
+  font-family: var(--sans);
+  font-size: 0.75rem; font-weight: 400;
+  color: var(--muted);
+}
+.listing-price-consult {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.btn-listing {
+  display: inline-flex; align-items: center;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid var(--border);
+  color: var(--gold);
+  font-size: 0.8rem; font-weight: 600;
+  padding: 8px 18px; border-radius: 100px;
+  text-decoration: none;
+  transition: var(--ease);
+  white-space: nowrap;
+}
+.btn-listing:hover {
+  background: var(--gold);
+  color: #0a0d14;
+}
+
+/* ---- CTA BAND ---- */
+.cta-band {
+  background: var(--dark2);
+  border-top: 1px solid var(--border2);
+  padding: 64px 0;
+  text-align: center;
+}
+.cta-band h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700; margin-bottom: 12px;
+}
+.cta-band p { color: var(--muted); margin-bottom: 28px; font-size: 0.98rem; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 640px) {
+  .filter-tabs { gap: 0; }
+  .tab { padding: 12px 12px; font-size: 0.78rem; }
+  .tab i { display: none; }
+  .listing-grid { grid-template-columns: 1fr; }
+  .cat-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
