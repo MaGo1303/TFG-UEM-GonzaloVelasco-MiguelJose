@@ -441,6 +441,7 @@ span.gold, span { color: inherit; }
     max-width: 260px;
   }
   .nav-links a:hover { background: var(--border2); color: var(--gold); }
+  .burger { display: flex; z-index: 200; }
   .nav-mobile-logo {
     display: block;
     font-family: var(--serif);
