@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoyalRent — Documentación TFG</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true,theme:'neutral',themeVariables:{primaryColor:'#c5a059',primaryTextColor:'#0f1520',primaryBorderColor:'#c5a059',lineColor:'#4a5568',secondaryColor:'#eef0f4',tertiaryColor:'#f5f6f8'}})</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',system-ui,sans-serif;color:#0f1520;background:#fff;line-height:1.7;counter-reset:h2-counter;}
+/* PORTADA */
+.portada{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;text-align:center;background:linear-gradient(135deg,#0f1520 0%,#1a1f2e 100%);color:#fff;padding:60px;page-break-after:always;}
+.portada h1{font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;margin-bottom:8px;letter-spacing:-0.02em;}
+.portada h1 span{color:#c5a059;}
+.portada .sub{font-size:1.1rem;color:#8898aa;margin-bottom:40px;font-weight:300;}
+.portada .line{width:60px;height:2px;background:#c5a059;margin:0 auto 40px;}
+.portada .info{font-size:0.9rem;color:#6b7a9a;line-height:2;}
+.portada .info strong{color:#c5a059;font-weight:600;}
+.portada .curso{position:absolute;bottom:50px;font-size:0.85rem;color:#4a5568;}
+
+/* CONTENIDO */
+.contenido{max-width:1000px;margin:0 auto;padding:40px 60px 80px;}
+
+h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#0f1520;margin-top:60px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #c5a059;}
+h2::before{counter-increment:h2-counter;content:counter(h2-counter) ". ";color:#c5a059;}
+h3{font-size:1.25rem;font-weight:600;color:#1a1f2e;margin-top:32px;margin-bottom:12px;}
+h4{font-size:1rem;font-weight:600;color:#2d3748;margin-top:24px;margin-bottom:8px;}
+p{margin-bottom:12px;color:#4a5568;}
+ul,ol{margin:8px 0 16px 24px;color:#4a5568;}
+li{margin-bottom:4px;}
+strong{color:#0f1520;}
+code{font-family:'JetBrains Mono',monospace;font-size:0.85rem;background:#f0f1f4;padding:2px 6px;border-radius:4px;color:#0f1520;}
+pre{background:#0f1520;color:#e2e8f0;padding:16px 20px;border-radius:8px;overflow-x:auto;font-size:0.8rem;line-height:1.5;margin:12px 0 20px;font-family:'JetBrains Mono',monospace;}
+pre code{background:transparent;padding:0;color:inherit;font-size:inherit;}
+pre .comment{color:#6b7a9a;font-style:italic;}
+pre .keyword{color:#c5a059;}
+pre .string{color:#68d391;}
+pre .func{color:#63b3ed;}
+
+.tabla-wrap{overflow-x:auto;margin:16px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+th{background:#0f1520;color:#fff;padding:10px 14px;text-align:left;font-weight:600;}
+td{padding:8px 14px;border-bottom:1px solid #e2e8f0;color:#4a5568;}
+tr:nth-child(even) td{background:#f8f9fc;}
+tr:hover td{background:#eef0f4;}
+
+.card{border:1px solid #dde1ea;border-radius:10px;padding:20px 24px;margin:16px 0;background:#fafbfc;}
+.card-title{font-weight:600;color:#0f1520;margin-bottom:8px;font-size:0.95rem;}
+
+.tag{display:inline-block;font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:4px;margin:2px;background:#f0f1f4;color:#4a5568;border:1px solid #dde1ea;}
+.tag.gold{background:#fdfaf2;color:#c5a059;border-color:#eadbc1;}
+.tag.blue{background:#ebf4ff;color:#2b6cb0;border-color:#bee3f8;}
+.tag.green{background:#f0fff4;color:#276749;border-color:#c6f6d5;}
+.tag.red{background:#fff5f5;color:#c53030;border-color:#fed7d7;}
+
+.alert{border-left:4px solid #c5a059;background:#fdfaf2;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0;font-size:0.9rem;color:#4a5568;}
+.alert strong{color:#0f1520;}
+
+.diagram-wrap{background:#fff;border:1px solid #dde1ea;border-radius:10px;padding:20px;margin:16px 0;overflow-x:auto;text-align:center;}
+.diagram-wrap .mermaid{display:inline-block;}
+
+.toc{margin:20px 0 40px;counter-reset:toc-counter;}
+.toc a{display:block;padding:8px 0 8px 24px;color:#4a5568;text-decoration:none;border-bottom:1px solid #eef0f4;font-size:0.9rem;position:relative;}
+.toc a::before{counter-increment:toc-counter;content:counter(toc-counter) ". ";color:#c5a059;font-weight:600;position:absolute;left:0;}
+.toc a:hover{color:#c5a059;}
+.toc .sub-item{padding-left:48px;}
+.toc .sub-item::before{content:"• ";color:#c5a059;counter-increment:none;position:absolute;left:28px;}
+
+.cover-page{page-break-before:always;}
+.small{font-size:0.8rem;color:#8898aa;}
+
+@media print{
+.portada{height:100vh;}
+.contenido{padding:20px 40px;}
+pre{white-space:pre-wrap;page-break-inside:avoid;}
+h2,h3{page-break-after:avoid;}
+.diagram-wrap{page-break-inside:avoid;}
+.card{page-break-inside:avoid;}
+table{font-size:0.8rem;}
+}
+
+@media(max-width:768px){
+.contenido{padding:20px;}
+.portada h1{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <h1>Royal<span>Rent</span></h1>
+  <div class="line"></div>
+  <p class="sub">Plataforma de Alquiler de Vehículos y Servicios Premium</p>
+  <div class="info">
+    <strong>Proyecto Fin de Ciclo</strong><br>
+    Desarrollo de Aplicaciones Multiplataforma (DAM)<br><br>
+    <strong>Autores:</strong><br>
+    Gonzalo Velasco &amp; Miguel José<br><br>
+    <strong>Curso:</strong> 2024–2025
+  </div>
+  <p class="curso">IES · Ciclo Formativo de Grado Superior en DAM</p>
+</section>
+
+<!-- CONTENIDO -->
+<div class="contenido">
+
+<!-- ÍNDICE -->
+<h2 style="counter-reset:h2-counter 0;">Índice</h2>
+<div class="toc">
+  <a href="#intro">Introducción</a>
+  <a href="#stack" class="sub-item">Stack Tecnológico</a>
+  <a href="#estructura" class="sub-item">Estructura del Proyecto</a>
+  <a href="#frontend">Frontend</a>
+  <a href="#frontend-main" class="sub-item">main.jsx</a>
+  <a href="#frontend-app" class="sub-item">App.jsx</a>
+  <a href="#frontend-navbar" class="sub-item">Navbar.jsx</a>
+  <a href="#frontend-footer" class="sub-item">Footer.jsx</a>
+  <a href="#frontend-home" class="sub-item">Home.jsx</a>
+  <a href="#frontend-services" class="sub-item">Services.jsx</a>
+  <a href="#frontend-auth" class="sub-item">Auth.jsx</a>
+  <a href="#frontend-cart" class="sub-item">Cart.jsx</a>
+  <a href="#frontend-profile" class="sub-item">Profile.jsx</a>
+  <a href="#frontend-authcontext" class="sub-item">AuthContext / useAuth</a>
+  <a href="#frontend-cartcontext" class="sub-item">CartContext / useCart</a>
+  <a href="#frontend-css" class="sub-item">index.css y servicios.css</a>
+  <a href="#backend">Backend</a>
+  <a href="#backend-server" class="sub-item">server.js</a>
+  <a href="#backend-schema" class="sub-item">schema.sql</a>
+  <a href="#backend-initdb" class="sub-item">init_db.js</a>
+  <a href="#bd">Base de Datos</a>
+  <a href="#api">API Endpoints</a>
+  <a href="#diagramas">Diagramas de Flujo</a>
+  <a href="#ejecutar">Cómo Ejecutar el Proyecto</a>
+  <a href="#decisiones">Decisiones Técnicas</a>
+</div>
+
+<!-- INTRODUCCIÓN -->
+<h2 id="intro">Introducción</h2>
+<p><strong>RoyalRent</strong> es una aplicación web desarrollada como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM). Consiste en una plataforma de alquiler de vehículos y servicios premium que permite a los usuarios explorar un catálogo de coches de lujo, yates y helicópteros, gestionar un carrito de compra, registrarse, iniciar sesión y consultar su historial de reservas.</p>
+
+<p>El proyecto se divide en dos partes claramente diferenciadas:</p>
+<ul>
+  <li><strong>Frontend:</strong> Aplicación web SPA (Single Page Application) construida con React 19 y Vite 8.</li>
+  <li><strong>Backend:</strong> API REST construida con Node.js, Express 5 y MySQL, que proporciona los endpoints necesarios para la gestión de usuarios, productos y pedidos.</li>
+</ul>
+
+<div class="alert">
+  <strong>Objetivo académico:</strong> Demostrar la capacidad de diseñar, desarrollar y documentar una aplicación completa full-stack, aplicando los conocimientos adquiridos durante el ciclo formativo en programación, bases de datos, diseño de interfaces y despliegue.
+</div>
+
+<!-- STACK TECNOLÓGICO -->
+<h2 id="stack">Stack Tecnológico</h2>
+
+<h3>Frontend</h3>
+<table>
+  <tr><th>Tecnología</th><th>Versión</th><th>Función</th></tr>
+  <tr><td><strong>React</strong></td><td>19.2.5</td><td>Biblioteca principal para la construcción de la interfaz de usuario basada en componentes</td></tr>
+  <tr><td><strong>Vite</strong></td><td>8.0.10</td><td>Entorno de desarrollo y empaquetador (bundler) ultrarrápido</td></tr>
+  <tr><td><strong>React Router</strong></td><td>7.15.0</td><td>Enrutamiento del lado del cliente (navegación SPA)</td></tr>
+  <tr><td><strong>Axios</strong></td><td>1.16.0</td><td>Cliente HTTP para las peticiones al backend</td></tr>
+  <tr><td><strong>Lucide React</strong></td><td>1.14.0</td><td>Iconos vectoriales ligeros para la interfaz</td></tr>
+  <tr><td><strong>Font Awesome</strong></td><td>6.5.0</td><td>Iconos adicionales (CDN)</td></tr>
+  <tr><td><strong>ESLint</strong></td><td>10.2.1</td><td>Análisis estático de código para mantener calidad y buenas prácticas</td></tr>
+</table>
+
+<h3>Backend</h3>
+<table>
+  <tr><th>Tecnología</th><th>Versión</th><th>Función</th></tr>
+  <tr><td><strong>Node.js</strong></td><td>—</td><td>Entorno de ejecución JavaScript del lado del servidor</td></tr>
+  <tr><td><strong>Express</strong></td><td>5.2.1</td><td>Framework web para la creación de la API REST</td></tr>
+  <tr><td><strong>MySQL2</strong></td><td>3.22.3</td><td>Driver de conexión a la base de datos MySQL con soporte de promesas</td></tr>
+  <tr><td><strong>JSON Web Token (JWT)</strong></td><td>9.0.3</td><td>Autenticación mediante tokens cifrados</td></tr>
+  <tr><td><strong>bcrypt</strong></td><td>6.0.0</td><td>Hash y comparación segura de contraseñas</td></tr>
+  <tr><td><strong>CORS</strong></td><td>2.8.6</td><td>Middleware para permitir peticiones desde el frontend (cross-origin)</td></tr>
+  <tr><td><strong>dotenv</strong></td><td>17.4.2</td><td>Carga de variables de entorno desde archivo .env</td></tr>
+</table>
+
+<h3>Base de Datos</h3>
+<table>
+  <tr><th>Tecnología</th><th>Función</th></tr>
+  <tr><td><strong>MySQL</strong></td><td>Base de datos relacional que almacena usuarios, productos y pedidos</td></tr>
+  <tr><td><strong>XAMPP / MySQL Workbench</strong></td><td>Entorno de gestión local de la base de datos</td></tr>
+</table>
+
+<!-- ESTRUCTURA -->
+<h2 id="estructura">Estructura del Proyecto</h2>
+
+<p>El proyecto se organiza en dos directorios independientes: <code>frontend/</code> y <code>backend/</code>. Cada uno tiene su propio <code>package.json</code> y sus dependencias.</p>
+
+<div class="diagram-wrap">
+<pre class="mermaid">
+graph TD
+    subgraph frontend[frontend/]
+        direction TB
+        F1[src/]
+        F2[index.html]
+        F3[package.json]
+        F4[vite.config.js]
+        F5[eslint.config.js]
+        F6[.gitignore]
+        F1 --> C1[main.jsx]
+        F1 --> C2[App.jsx]
+        F1 --> C3[index.css]
+        F1 --> C4[servicios.css]
+        F1 --> C5[components/]
+        F1 --> C6[pages/]
+        F1 --> C7[context/]
+        C5 --> C5A[Navbar.jsx]
+        C5 --> C5B[Footer.jsx]
+        C6 --> C6A[Home.jsx]
+        C6 --> C6B[Services.jsx]
+        C6 --> C6C[Auth.jsx]
+        C6 --> C6D[Cart.jsx]
+        C6 --> C6E[Profile.jsx]
+        C7 --> C7A[AuthContext.jsx]
+        C7 --> C7B[CartContext.jsx]
+        C7 --> C7C[useAuth.js]
+        C7 --> C7D[useCart.js]
+    end
+
+    subgraph backend[backend/]
+        direction TB
+        B1[server.js]
+        B2[init_db.js]
+        B3[schema.sql]
+        B4[package.json]
+    end
+
+    frontend -->|Peticiones HTTP| backend
+</pre>
+</div>
+
+<h3>Descripción de Directorios y Archivos</h3>
+
+<table>
+  <tr><th>Ruta</th><th>Descripción</th></tr>
+  <tr><td><code>frontend/index.html</code></td><td>Punto de entrada HTML. Carga el módulo principal de React y las fuentes/iconos externos</td></tr>
+  <tr><td><code>frontend/src/main.jsx</code></td><td>Punto de entrada de React. Renderiza el componente App dentro de StrictMode</td></tr>
+  <tr><td><code>frontend/src/App.jsx</code></td><td>Componente raíz. Define el Router, los providers de contexto y las rutas</td></tr>
+  <tr><td><code>frontend/src/components/Navbar.jsx</code></td><td>Barra de navegación superior con menú responsive, login/logout y acceso al carrito</td></tr>
+  <tr><td><code>frontend/src/components/Footer.jsx</code></td><td>Pie de página con enlaces a servicios, equipo y contacto</td></tr>
+  <tr><td><code>frontend/src/pages/Home.jsx</code></td><td>Página principal con hero, reseñas, servicios destacados, equipo y formulario de contacto</td></tr>
+  <tr><td><code>frontend/src/pages/Services.jsx</code></td><td>Catálogo de servicios con filtros por categoría y tarjetas de producto</td></tr>
+  <tr><td><code>frontend/src/pages/Auth.jsx</code></td><td>Página de inicio de sesión y registro con formulario único conmutante</td></tr>
+  <tr><td><code>frontend/src/pages/Cart.jsx</code></td><td>Carrito de compra con dos pasos: revisión de items y pantalla de pago simulado</td></tr>
+  <tr><td><code>frontend/src/pages/Profile.jsx</code></td><td>Perfil de usuario con formulario de actualización de datos e historial de reservas</td></tr>
+  <tr><td><code>frontend/src/context/AuthContext.jsx</code></td><td>Contexto de autenticación: login, registro, logout, persistencia del token y carga del perfil</td></tr>
+  <tr><td><code>frontend/src/context/CartContext.jsx</code></td><td>Contexto del carrito: añadir, eliminar, vaciar y calcular total</td></tr>
+  <tr><td><code>frontend/src/context/useAuth.js</code></td><td>Hook para acceder al AuthContext</td></tr>
+  <tr><td><code>frontend/src/context/useCart.js</code></td><td>Hook para acceder al CartContext</td></tr>
+  <tr><td><code>frontend/src/index.css</code></td><td>Estilos globales: variables CSS, navbar, hero, secciones, footer, responsive</td></tr>
+  <tr><td><code>frontend/src/servicios.css</code></td><td>Estilos específicos del catálogo: filtros, tarjetas, grid de productos</td></tr>
+  <tr><td><code>backend/server.js</code></td><td>Servidor Express con todas las rutas de la API (auth, usuarios, items, pedidos)</td></tr>
+  <tr><td><code>backend/schema.sql</code></td><td>Script SQL de creación de la base de datos y tablas, con datos de prueba</td></tr>
+  <tr><td><code>backend/init_db.js</code></td><td>Script Node.js que ejecuta schema.sql automáticamente</td></tr>
+</table>
+
+<!-- FRONTEND -->
+<h2 id="frontend">Frontend</h2>
+
+<h3 id="frontend-main">main.jsx</h3>
+<pre><code><span class="keyword">import</span> <span class="string">React</span> <span class="keyword">from</span> <span class="string">'react'</span>
+<span class="keyword">import</span> <span class="string">ReactDOM</span> <span class="keyword">from</span> <span class="string">'react-dom/client'</span>
+<span class="keyword">import</span> <span class="string">App</span> <span class="keyword">from</span> <span class="string">'./App.jsx'</span>
+<span class="keyword">import</span> <span class="string">'./index.css'</span>
+<span class="keyword">import</span> <span class="string">'./servicios.css'</span>
+
+ReactDOM.createRoot(document.getElementById(<span class="string">'root'</span>)).render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;,
+)</code></pre>
+
+<p>Fichero de entrada de la aplicación. <strong>React.StrictMode</strong> activa comprobaciones en desarrollo (doble renderizado, detección de efectos incorrectos). Se importan los dos archivos CSS globales (<code>index.css</code> y <code>servicios.css</code>) para que estén disponibles en toda la app.</p>
+
+<h3 id="frontend-app">App.jsx</h3>
+<pre><code>&lt;AuthProvider&gt;
+  &lt;CartProvider&gt;
+    &lt;Router&gt;
+      &lt;Navbar /&gt;
+      &lt;Routes&gt;
+        &lt;Route path=<span class="string">"/"</span> element={&lt;Home /&gt;} /&gt;
+        &lt;Route path=<span class="string">"/services"</span> element={&lt;Services /&gt;} /&gt;
+        &lt;Route path=<span class="string">"/auth"</span> element={&lt;Auth /&gt;} /&gt;
+        &lt;Route path=<span class="string">"/profile"</span> element={&lt;Profile /&gt;} /&gt;
+        &lt;Route path=<span class="string">"/cart"</span> element={&lt;Cart /&gt;} /&gt;
+      &lt;/Routes&gt;
+      &lt;Footer /&gt;
+    &lt;/Router&gt;
+  &lt;/CartProvider&gt;
+&lt;/AuthProvider&gt;</code></pre>
+
+<p><strong>Componente raíz</strong> que define la estructura de la aplicación. Los providers (<code>AuthProvider</code> y <code>CartProvider</code>) envuelven toda la app para que cualquier componente hijo pueda acceder al estado global de autenticación y carrito mediante hooks.</p>
+
+<p>Se utiliza <code>BrowserRouter</code> de React Router v7 para la navegación SPA con 5 rutas. El <code>Navbar</code> y <code>Footer</code> se renderizan siempre, mientras que el contenido cambia según la ruta.</p>
+
+<h3 id="frontend-navbar">Navbar.jsx</h3>
+<p>Barra de navegación superior con las siguientes funcionalidades:</p>
+<ul>
+  <li><strong>Scroll detection:</strong> Un <code>useEffect</code> escucha el evento <code>scroll</code> del window. Cuando el scroll supera 50px, añade la clase <code>solid</code> para cambiar el fondo de la navbar (de transparente a sólido). Se limpia el listener al desmontar.</li>
+  <li><strong>Menú responsive:</strong> Un botón hamburguesa (<code>burger</code>) togglea el menú en móviles mediante <code>menuOpen</code> state.</li>
+  <li><strong>Autenticación:</strong> Muestra el nombre del usuario y botón de logout si está logueado, o un enlace "Login" si no.</li>
+  <li><strong>Carrito:</strong> Icono con badge que muestra el número de items en el carrito.</li>
+  <li><strong>Logo dual:</strong> Muestra un logo para desktop y otro (favicon) para móviles mediante CSS.</li>
+</ul>
+
+<div class="card">
+  <div class="card-title">📌 Detalle técnico: smooth scroll ocultación</div>
+  <p>La navbar arranca con la clase <code>nav-hidden-top</code> que la oculta desplazándola hacia arriba con <code>transform: translateY(-100%)</code>. Al hacer scroll, la clase <code>solid</code> la muestra. Esto crea el efecto de "revelar la navbar al hacer scroll".</p>
+</div>
+
+<h3 id="frontend-footer">Footer.jsx</h3>
+<p>Pie de página simple con el logo, copyright (Gonzalo Velasco &amp; Miguel José · PFC DAM) y enlaces rápidos a Servicios, Equipo y Contacto.</p>
+
+<h3 id="frontend-home">Home.jsx</h3>
+<p>Página principal con 5 secciones:</p>
+<ol>
+  <li><strong>Hero:</strong> Video de fondo (con poster de respaldo), título principal "El Lujo que Mereces", botón CTA a servicios, estadísticas (500+ servicios, 3 categorías, 24/7 soporte) y un indicador de scroll animado.</li>
+  <li><strong>Confianza (Reviews):</strong> Un marquee horizontal con reseñas simuladas de Google. Cada card contiene avatar, nombre, fecha, valoración (estrellas) y texto de opinión. El track se desplaza infinitamente con animación CSS y se pausa al hacer hover.</li>
+  <li><strong>Servicios:</strong> Grid de 3 tarjetas que enlazan a <code>/services?type=car|yacht|helicopter</code> pasando la categoría como query param.</li>
+  <li><strong>Equipo:</strong> Dos tarjetas presentando a los desarrolladores con sus roles y tecnologías usadas (tags).</li>
+  <li><strong>Contacto:</strong> Formulario de contacto (nombre, email, mensaje) visual, sin lógica de envío implementada (es meramente estructural).</li>
+</ol>
+
+<div class="alert">
+  <strong>Nota:</strong> El formulario de contacto no tiene manejo de submit porque es una maqueta visual. En una versión real se conectaría a un servicio de email o se almacenaría en BD.
+</div>
+
+<h3 id="frontend-services">Services.jsx</h3>
+<p>Catálogo de servicios con las siguientes características:</p>
+<ul>
+  <li><strong>Filtrado por URL:</strong> Utiliza <code>useSearchParams</code> de React Router para leer el query param <code>type</code> (<code>?type=car</code>, <code>?type=yacht</code>, <code>?type=helicopter</code>). Los enlaces desde Home.jsx ya incluyen este parámetro.</li>
+  <li><strong>Pestañas de filtro:</strong> 4 botones (Todos, Coches, Yates, Helicópteros) que actualizan el query param con <code>setSearchParams</code>.</li>
+  <li><strong>Fetch de datos:</strong> Un <code>useEffect</code> dependiente del filtro realiza una petición GET a <code>/api/items</code> con o sin <code>?type=</code> según corresponda. Los resultados se almacenan en el state <code>items</code>.</li>
+  <li><strong>Tarjetas de producto:</strong> Cada item se renderiza como una <code>listing-card</code> con imagen de fondo (con fallback si no hay URL), nombre, descripción, estrellas (estáticas), especificaciones según el tipo, precio y botón "Añadir" que llama a <code>addToCart</code> del contexto.</li>
+</ul>
+
+<div class="diagram-wrap">
+<pre class="mermaid">
+sequenceDiagram
+    actor User
+    participant Services
+    participant API as Backend API
+    participant DB as MySQL
+
+    User->>Services: Click en categoría / Navega a /services?type=car
+    Services->>Services: useSearchParams obtiene type
+    Services->>API: GET /api/items?type=car
+    API->>DB: SELECT * FROM items WHERE type='car'
+    DB-->>API: Resultados
+    API-->>Services: JSON con items
+    Services->>Services: Renderiza tarjetas
+    User->>Services: Click "Añadir"
+    Services->>CartContext: addToCart(item)
+</pre>
+</div>
+
+<h3 id="frontend-auth">Auth.jsx</h3>
+<p>Página de autenticación que combina login y registro en un mismo componente:</p>
+<ul>
+  <li><strong>Toggle login/registro:</strong> Un state <code>isLogin</code> alterna entre los dos modos. En modo registro se muestra un campo adicional "Nombre completo".</li>
+  <li><strong>Formulario controlado:</strong> <code>formData</code> (name, email, password) se actualiza con <code>onChange</code> en cada input.</li>
+  <li><strong>Manejo de errores:</strong> Si el servidor devuelve error (email duplicado, credenciales inválidas), se muestra un mensaje en un banner rojo.</li>
+  <li><strong>Redirección:</strong> Tras login/registro exitoso, navega a <code>/profile</code>.</li>
+  <li><strong>Estado loading:</strong> Mientras se procesa la petición, el botón se deshabilita y muestra "Procesando...".</li>
+</ul>
+
+<h3 id="frontend-cart">Cart.jsx</h3>
+<p>Carrito de compra con un flujo de 2 pasos:</p>
+<ol>
+  <li><strong>Paso 1 — Carrito:</strong> Lista los items añadidos con imagen, nombre, cantidad y precio. Muestra el total. Botón "Proceder al Pago Seguro" que cambia al paso 2 (si no hay usuario logueado, redirige a login).</li>
+  <li><strong>Paso 2 — Pago:</strong> Pantalla simulada de pago con selección de tarjeta (Visa, Mastercard, o añadir nueva). Un resumen lateral muestra subtotal, tasas y total. El botón "Pagar" ejecuta <code>handleCheckout</code>.</li>
+</ol>
+<p>El <strong>checkout</strong> envía un POST a <code>/api/orders</code> con los datos del carrito. Si tiene éxito, limpia el carrito y redirige al perfil con una alerta de confirmación.</p>
+
+<h3 id="frontend-profile">Profile.jsx</h3>
+<p>Perfil de usuario con dos paneles:</p>
+<ul>
+  <li><strong>Izquierda — Actualizar datos:</strong> Formulario precargado con nombre, email y contraseña opcional. Al enviar, hace PUT a <code>/api/user/profile</code> y muestra mensaje de éxito/error.</li>
+  <li><strong>Derecha — Historial de reservas:</strong> Fetch a <code>/api/orders/history</code>. Cada orden se muestra como una card con referencia (#XXXXX), total pagado y lista de items (imagen, nombre, tipo, cantidad, precio). Si no hay reservas, muestra un mensaje con enlace al catálogo.</li>
+  <li><strong>Logout:</strong> Botón que llama a <code>logout()</code> del contexto y redirige al home.</li>
+  <li><strong>Protección:</strong> Si no hay usuario (<code>!user</code>), redirige a <code>/auth</code>. Mientras tanto, retorna <code>null</code>.</li>
+</ul>
+
+<h3 id="frontend-authcontext">AuthContext.jsx / useAuth.js</h3>
+<p>Contexto de autenticación que provee el estado del usuario a toda la aplicación:</p>
+
+<div class="card">
+  <div class="card-title">📌 Flujo de autenticación</div>
+  <ol>
+    <li>Al cargar la app, se comprueba si hay un <strong>token</strong> en <code>localStorage</code>.</li>
+    <li>Si existe, se añade a los headers de Axios y se hace <code>GET /api/user/profile</code> para obtener los datos del usuario.</li>
+    <li>Si la petición falla, se ejecuta <code>logout()</code> (token inválido/expirado).</li>
+    <li>Si no hay token, <code>loading</code> se inicializa a <code>false</code> y se renderiza la app sin usuario.</li>
+    <li>Las funciones <code>login</code> y <code>register</code> hacen peticiones al backend, almacenan el token y actualizan el estado.</li>
+  </ol>
+</div>
+
+<p><strong>Funciones expuestas:</strong></p>
+<table>
+  <tr><th>Función</th><th>Descripción</th></tr>
+  <tr><td><code>login(email, password)</code></td><td>POST /api/login, guarda token en localStorage, actualiza estado</td></tr>
+  <tr><td><code>register(name, email, password)</code></td><td>POST /api/register, luego hace login automático</td></tr>
+  <tr><td><code>logout()</code></td><td>Limpia token de localStorage, resetea estado, elimina header de Axios</td></tr>
+  <tr><td><code>setUser(user)</code></td><td>Actualiza el usuario manualmente (usado en Profile al editar datos)</td></tr>
+</table>
+
+<div class="alert">
+  <strong>Nota:</strong> El hook <code>useAuth</code> se ha separado en un archivo independiente (<code>useAuth.js</code>) para evitar errores de Fast Refresh de ESLint, ya que React requiere que los archivos exporten solo componentes para un HMR óptimo.
+</div>
+
+<h3 id="frontend-cartcontext">CartContext.jsx / useCart.js</h3>
+<p>Contexto del carrito que mantiene el estado de los items seleccionados:</p>
+
+<table>
+  <tr><th>Función</th><th>Descripción</th></tr>
+  <tr><td><code>addToCart(item)</code></td><td>Añade un item al carrito. Si ya existe, incrementa su cantidad en 1</td></tr>
+  <tr><td><code>removeFromCart(id)</code></td><td>Elimina completamente un item del carrito por su id</td></tr>
+  <tr><td><code>clearCart()</code></td><td>Vacía el carrito por completo</td></tr>
+  <tr><td><code>cartTotal</code></td><td>Valor calculado: suma de (precio × cantidad) de todos los items</td></tr>
+</table>
+
+<h3 id="frontend-css">index.css y servicios.css</h3>
+<p>Dos archivos CSS que siguen una arquitectura modular:</p>
+<ul>
+  <li><strong>index.css:</strong> Variables globales (paleta de colores, fuentes, sombras, bordes), reset, estilos de la navbar, hero, secciones, botones, grid de servicios, reseñas, equipo, formularios, footer y media queries responsive hasta 640px.</li>
+  <li><strong>servicios.css:</strong> Estilos específicos del catálogo: breadcrumb, filtros (tabs), grid de tarjetas de producto, especificaciones, precios, botón de añadir al carrito y responsive.</li>
+</ul>
+
+<p><strong>Variables CSS principales:</strong></p>
+<pre><code>:root {
+  --accent: #c5a059;             <span class="comment">/* Dorado corporativo */</span>
+  --surface: #ffffff;             <span class="comment">/* Fondos claros */</span>
+  --bg: #f5f6f8;                  <span class="comment">/* Fondo general */</span>
+  --text: #0f1520;               <span class="comment">/* Texto principal */</span>
+  --text-2: #4a5568;              <span class="comment">/* Texto secundario */</span>
+  --serif: 'Playfair Display';    <span class="comment">/* Fuente para títulos */</span>
+  --sans: 'Inter';                <span class="comment">/* Fuente para texto */</span>
+}</code></pre>
+
+<!-- BACKEND -->
+<h2 id="backend">Backend</h2>
+
+<h3 id="backend-server">server.js</h3>
+<p>Servidor Express que expone una API REST en el puerto 5000. Estructura general:</p>
+
+<pre><code><span class="comment">// Configuración inicial</span>
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2/promise');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+<span class="comment">// Pool de conexiones MySQL</span>
+const pool = mysql.createPool({
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'royalrent',
+    waitForConnections: true,
+    connectionLimit: 10
+});</code></pre>
+
+<p>Se utiliza un <strong>pool de conexiones</strong> (límite de 10 conexiones simultáneas) para no abrir/cerrar una conexión en cada petición, lo que mejora el rendimiento.</p>
+
+<h4>Middleware de autenticación: authenticateToken</h4>
+<pre><code><span class="keyword">const</span> authenticateToken = (req, res, next) => {
+    <span class="keyword">const</span> authHeader = req.headers[<span class="string">'authorization'</span>];
+    <span class="keyword">const</span> token = authHeader && authHeader.split(<span class="string">' '</span>)[1];
+    <span class="keyword">if</span> (!token) <span class="keyword">return</span> res.sendStatus(401);
+
+    jwt.verify(token, process.env.JWT_SECRET || <span class="string">'secret_key'</span>, (err, user) => {
+        <span class="keyword">if</span> (err) <span class="keyword">return</span> res.sendStatus(403);
+        req.user = user;
+        next();
+    });
+};</code></pre>
+<p>Extrae el token del header <code>Authorization: Bearer &lt;token&gt;</code>, lo verifica con <code>jwt.verify</code> y, si es válido, adjunta los datos del usuario al objeto <code>req</code>. Si no hay token → 401. Si el token es inválido/expirado → 403.</p>
+
+<h4>Rutas de autenticación</h4>
+<table>
+  <tr><th>Ruta</th><th>Método</th><th>Autenticación</th><th>Lógica</th></tr>
+  <tr><td><code>/api/register</code></td><td>POST</td><td>No</td><td>Recibe name, email, password. Hashea la contraseña con bcrypt (10 rondas). Inserta en BD. Si el email ya existe, devuelve 400 (ER_DUP_ENTRY).</td></tr>
+  <tr><td><code>/api/login</code></td><td>POST</td><td>No</td><td>Busca el usuario por email. Compara contraseña con bcrypt. Si coincide, genera un JWT con expiración de 24h y lo devuelve junto con los datos del usuario.</td></tr>
+</table>
+
+<h4>Rutas de usuario</h4>
+<table>
+  <tr><th>Ruta</th><th>Método</th><th>Autenticación</th><th>Lógica</th></tr>
+  <tr><td><code>/api/user/profile</code></td><td>GET</td><td>Sí</td><td>Devuelve id, name, email, created_at del usuario autenticado.</td></tr>
+  <tr><td><code>/api/user/profile</code></td><td>PUT</td><td>Sí</td><td>Actualiza name, email y opcionalmente password del usuario autenticado. Si se envía password, lo hashea antes de actualizar.</td></tr>
+</table>
+
+<h4>Rutas de items</h4>
+<table>
+  <tr><th>Ruta</th><th>Método</th><th>Autenticación</th><th>Lógica</th></tr>
+  <tr><td><code>/api/items</code></td><td>GET</td><td>No</td><td>Devuelve todos los items. Si se pasa query param <code>?type=car|yacht|helicopter</code>, filtra por tipo.</td></tr>
+</table>
+
+<h4>Rutas de pedidos</h4>
+<table>
+  <tr><th>Ruta</th><th>Método</th><th>Autenticación</th><th>Lógica</th></tr>
+  <tr><td><code>/api/orders</code></td><td>POST</td><td>Sí</td><td>Crea un pedido en una transacción: inserta en <code>orders</code> (user_id, total_price) y en <code>order_items</code> (order_id, item_id, quantity, price) para cada item. Si algo falla, hace rollback.</td></tr>
+  <tr><td><code>/api/orders/history</code></td><td>GET</td><td>Sí</td><td>Devuelve todos los pedidos del usuario autenticado ordenados por fecha descendente. Cada pedido incluye sus items con nombre, tipo e imagen mediante un JOIN con la tabla items.</td></tr>
+</table>
+
+<div class="alert">
+  <strong>🧪 Detalle técnico: Transacciones en checkout</strong><br>
+  La ruta POST /api/orders utiliza una <strong>transacción SQL</strong> (<code>BEGIN TRANSACTION / COMMIT / ROLLBACK</code>) para garantizar que la orden y sus items se inserten de forma atómica. Si falla cualquier inserción, se deshacen todos los cambios y se devuelve error 500.
+</div>
+
+<h3 id="backend-schema">schema.sql</h3>
+<p>Script SQL que define la estructura completa de la base de datos:</p>
+
+<pre><code><span class="keyword">CREATE TABLE IF NOT EXISTS</span> users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+<span class="keyword">CREATE TABLE IF NOT EXISTS</span> items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type ENUM('car', 'yacht', 'helicopter') NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10,2) NOT NULL,
+    image_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+<span class="keyword">CREATE TABLE IF NOT EXISTS</span> orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    status VARCHAR(50) DEFAULT 'completed',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+<span class="keyword">CREATE TABLE IF NOT EXISTS</span> order_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    item_id INT NOT NULL,
+    quantity INT DEFAULT 1,
+    price DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (item_id) REFERENCES items(id)
+);</code></pre>
+
+<p>Además de las tablas, el script inserta <strong>40 registros de prueba</strong>: 20 coches, 12 yates y 8 helicópteros, con nombres reales de fabricantes (Ferrari, Lamborghini, Rolls-Royce, Azimut, Sunseeker, Bell, Airbus, etc.), descripciones, precios e imágenes.</p>
+
+<h3 id="backend-initdb">init_db.js</h3>
+<p>Script que automatiza la creación de la base de datos. Su funcionamiento:</p>
+<ol>
+  <li>Se conecta a MySQL <strong>sin especificar base de datos</strong> (para poder crearla).</li>
+  <li>Ejecuta <code>DROP DATABASE IF EXISTS royalrent</code> (borra la anterior si existe).</li>
+  <li>Lee el archivo <code>schema.sql</code> del disco.</li>
+  <li>Divide el contenido por punto y coma y ejecuta cada sentencia.</li>
+  <li>Muestra mensajes de estado en consola.</li>
+</ol>
+
+<div class="card">
+  <div class="card-title">⚠️ Advertencia</div>
+  <p><code>init_db.js</code> <strong>borra y recrea</strong> la base de datos desde cero. Al ejecutarlo se pierden todos los datos existentes. Está pensado para la inicialización inicial o para resetear la BD durante desarrollo.</p>
+</div>
+
+<!-- BASE DE DATOS -->
+<h2 id="bd">Base de Datos</h2>
+
+<h3>Diagrama Entidad-Relación</h3>
+<div class="diagram-wrap">
+<pre class="mermaid">
+erDiagram
+    users ||--o{ orders : realiza
+    orders ||--|{ order_items : contiene
+    items ||--o{ order_items : incluido_en
+
+    users {
+        int id PK
+        varchar(100) name
+        varchar(100) email UK
+        varchar(255) password
+        timestamp created_at
+    }
+
+    items {
+        int id PK
+        enum type "car | yacht | helicopter"
+        varchar(100) name
+        text description
+        decimal(10,2) price
+        varchar(255) image_url
+        timestamp created_at
+    }
+
+    orders {
+        int id PK
+        int user_id FK
+        decimal(10,2) total_price
+        varchar(50) status
+        timestamp created_at
+    }
+
+    order_items {
+        int id PK
+        int order_id FK
+        int item_id FK
+        int quantity
+        decimal(10,2) price
+    }
+</pre>
+</div>
+
+<h3>Descripción de Tablas</h3>
+
+<table>
+  <tr><th>Tabla</th><th>Descripción</th><th>Campos clave</th></tr>
+  <tr>
+    <td><code>users</code></td>
+    <td>Almacena los usuarios registrados</td>
+    <td><code>id</code> (PK, autoincremental), <code>email</code> (UNIQUE), <code>password</code> (hasheado con bcrypt)</td>
+  </tr>
+  <tr>
+    <td><code>items</code></td>
+    <td>Catálogo de productos disponibles para alquilar</td>
+    <td><code>type</code> (ENUM: car/yacht/helicopter), <code>price</code> (DECIMAL con 2 decimales), <code>image_url</code></td>
+  </tr>
+  <tr>
+    <td><code>orders</code></td>
+    <td>Pedidos realizados por los usuarios</td>
+    <td><code>user_id</code> (FK → users), <code>total_price</code>, <code>status</code> (default: 'completed')</td>
+  </tr>
+  <tr>
+    <td><code>order_items</code></td>
+    <td>Items individuales dentro de cada pedido (relación N:M entre orders e items)</td>
+    <td><code>order_id</code> (FK → orders), <code>item_id</code> (FK → items), <code>quantity</code>, <code>price</code></td>
+  </tr>
+</table>
+
+<div class="card">
+  <div class="card-title">📌 Relaciones</div>
+  <ul>
+    <li><strong>users → orders:</strong> 1:N. Un usuario puede tener múltiples pedidos.</li>
+    <li><strong>orders → order_items:</strong> 1:N. Un pedido contiene múltiples items.</li>
+    <li><strong>items → order_items:</strong> 1:N. Un producto puede aparecer en múltiples pedidos.</li>
+  </ul>
+</div>
+
+<!-- API ENDPOINTS -->
+<h2 id="api">API Endpoints</h2>
+<p>Resumen completo de todas las rutas disponibles en la API REST:</p>
+
+<table>
+  <tr><th>Método</th><th>Ruta</th><th>Auth</th><th>Body / Query</th><th>Respuesta</th><th>Códigos</th></tr>
+  <tr>
+    <td><span class="tag green">POST</span></td>
+    <td><code>/api/register</code></td>
+    <td><span class="tag red">No</span></td>
+    <td><code>{ name, email, password }</code></td>
+    <td><code>{ message, userId }</code></td>
+    <td>201 / 400 / 500</td>
+  </tr>
+  <tr>
+    <td><span class="tag green">POST</span></td>
+    <td><code>/api/login</code></td>
+    <td><span class="tag red">No</span></td>
+    <td><code>{ email, password }</code></td>
+    <td><code>{ token, user }</code></td>
+    <td>200 / 401 / 500</td>
+  </tr>
+  <tr>
+    <td><span class="tag blue">GET</span></td>
+    <td><code>/api/user/profile</code></td>
+    <td><span class="tag gold">Sí</span></td>
+    <td>—</td>
+    <td><code>{ id, name, email, created_at }</code></td>
+    <td>200 / 401 / 403 / 404</td>
+  </tr>
+  <tr>
+    <td><span class="tag gold">PUT</span></td>
+    <td><code>/api/user/profile</code></td>
+    <td><span class="tag gold">Sí</span></td>
+    <td><code>{ name, email, password? }</code></td>
+    <td><code>{ message }</code></td>
+    <td>200 / 500</td>
+  </tr>
+  <tr>
+    <td><span class="tag blue">GET</span></td>
+    <td><code>/api/items</code></td>
+    <td><span class="tag red">No</span></td>
+    <td><code>?type=car|yacht|helicopter</code> (opcional)</td>
+    <td><code>[{ id, type, name, description, price, image_url }]</code></td>
+    <td>200 / 500</td>
+  </tr>
+  <tr>
+    <td><span class="tag green">POST</span></td>
+    <td><code>/api/orders</code></td>
+    <td><span class="tag gold">Sí</span></td>
+    <td><code>{ items: [{ id, quantity, price }], totalPrice }</code></td>
+    <td><code>{ message, orderId }</code></td>
+    <td>201 / 500</td>
+  </tr>
+  <tr>
+    <td><span class="tag blue">GET</span></td>
+    <td><code>/api/orders/history</code></td>
+    <td><span class="tag gold">Sí</span></td>
+    <td>—</td>
+    <td><code>[{ id, total_price, status, created_at, items: [...] }]</code></td>
+    <td>200 / 500</td>
+  </tr>
+</table>
+
+<!-- DIAGRAMAS DE FLUJO -->
+<h2 id="diagramas">Diagramas de Flujo</h2>
+
+<h3>Flujo de Autenticación</h3>
+<div class="diagram-wrap">
+<pre class="mermaid">
+sequenceDiagram
+    actor User
+    participant Front as Frontend (React)
+    participant API as Backend API
+    participant DB as MySQL
+
+    Note over User,DB: REGISTRO
+    User->>Front: Rellena form registro
+    Front->>API: POST /api/register { name, email, password }
+    API->>API: Hash password (bcrypt)
+    API->>DB: INSERT INTO users
+    DB-->>API: OK
+    API-->>Front: 201 { message, userId }
+    Front->>API: Auto-login: POST /api/login
+    API->>DB: SELECT * FROM users WHERE email=?
+    DB-->>API: user data
+    API->>API: bcrypt.compare + jwt.sign
+    API-->>Front: { token, user }
+    Front->>Front: Guarda token en localStorage
+    Front->>Front: Redirige a /profile
+
+    Note over User,DB: LOGIN
+    User->>Front: Email + password
+    Front->>API: POST /api/login
+    API->>DB: Buscar usuario
+    DB-->>API: user
+    API->>API: bcrypt.compare + jwt.sign
+    API-->>Front: { token, user }
+    Front->>Front: localStorage.setItem('token', token)
+    Front->>Front: setUser(res.data.user)
+    Front->>Front: Redirige a /profile
+
+    Note over User,DB: CARGA INICIAL
+    Front->>Front: ¿Token en localStorage?
+    alt Sí
+        Front->>API: GET /api/user/profile (Bearer token)
+        API->>DB: SELECT FROM users WHERE id=?
+        DB-->>API: user
+        API-->>Front: { id, name, email }
+        Front->>Front: setUser(data)
+    else No
+        Front->>Front: setLoading(false) — usuario no logueado
+    end
+</pre>
+</div>
+
+<h3>Flujo del Carrito y Checkout</h3>
+<div class="diagram-wrap">
+<pre class="mermaid">
+sequenceDiagram
+    actor User
+    participant Services as Services.jsx
+    participant CartCtx as CartContext
+    participant Cart as Cart.jsx
+    participant API as Backend API
+    participant DB as MySQL
+
+    User->>Services: Click "Añadir" en un producto
+    Services->>CartCtx: addToCart(item)
+    CartCtx->>CartCtx: ¿Item existe? → incrementa quantity / añade nuevo
+
+    User->>Cart: Navega a /cart
+    Cart->>CartCtx: Lee cart y cartTotal
+    CartCtx-->>Cart: { cart: [...], cartTotal: 5400 }
+
+    User->>Cart: Click "Proceder al Pago Seguro"
+    alt No logueado
+        Cart->>Cart: Redirige a /auth
+    else Logueado
+        Cart->>Cart: Muestra pantalla de pago
+    end
+
+    User->>Cart: Selecciona tarjeta y click "Pagar"
+    Cart->>Cart: handleCheckout()
+    Cart->>API: POST /api/orders { items, totalPrice }
+    Note over API: Inicia transacción
+    API->>DB: INSERT INTO orders (user_id, total_price)
+    DB-->>API: orderId
+    loop Cada item
+        API->>DB: INSERT INTO order_items (order_id, item_id, quantity, price)
+    end
+    Note over API: COMMIT
+    API-->>Cart: 201 { message, orderId }
+    Cart->>Cart: clearCart()
+    Cart->>Cart: alert("Reserva realizada")
+    Cart->>Cart: Redirige a /profile
+</pre>
+</div>
+
+<h3>Arquitectura Frontend ↔ Backend</h3>
+<div class="diagram-wrap">
+<pre class="mermaid">
+graph TB
+    subgraph Navegador[NAVEGADOR - Frontend]
+        direction TB
+        React[React App]
+        Router[React Router<br/>/ /services /auth /cart /profile]
+        Context[Context API<br/>AuthContext + CartContext]
+        Axios[Axios HTTP Client]
+    end
+
+    subgraph Servidor[SERVIDOR - Backend]
+        direction TB
+        Express[Express.js Server<br/>Port 5000]
+        Auth[Auth Module<br/>bcrypt + JWT]
+        Middleware[authenticateToken<br/>Middleware JWT]
+        Routes[API Routes<br/>/api/register /api/login<br/>/api/user /api/items /api/orders]
+        Pool[MySQL Pool<br/>10 conexiones]
+    end
+
+    subgraph DB[MySQL Database]
+        Tables[Tablas<br/>users / items<br/>orders / order_items]
+    end
+
+    Axios -->|HTTP Requests| Express
+    Express --> Middleware
+    Express --> Auth
+    Express --> Routes
+    Routes --> Pool
+    Pool -->|Consultas SQL| Tables
+    Tables -->|Resultados| Routes
+    Routes -->|JSON Response| Axios
+    Axios -->|Actualiza estado| Context
+    Context -->|Reactivos| React
+    Router -->|Navegación| React
+</pre>
+</div>
+
+<!-- CÓMO EJECUTAR -->
+<h2 id="ejecutar">Cómo Ejecutar el Proyecto</h2>
+
+<h3>Prerrequisitos</h3>
+<ul>
+  <li><strong>Node.js</strong> (v18 o superior)</li>
+  <li><strong>MySQL</strong> (XAMPP, MySQL Workbench o similar)</li>
+  <li><strong>npm</strong> (incluido con Node.js)</li>
+</ul>
+
+<h3>Paso a paso</h3>
+<ol>
+  <li>
+    <strong>Iniciar MySQL</strong><br>
+    Asegúrate de que el servicio de MySQL esté ejecutándose (XAMPP → Start MySQL).
+  </li>
+  <li>
+    <strong>Configurar variables de entorno (opcional)</strong><br>
+    Crea un archivo <code>.env</code> en la carpeta <code>backend/</code>:
+    <pre><code>DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=royalrent
+JWT_SECRET=tu_clave_secreta
+PORT=5000</code></pre>
+    Si no se crea, el servidor usa los valores por defecto.
+  </li>
+  <li>
+    <strong>Inicializar la base de datos</strong><br>
+    <pre><code>cd backend
+npm install
+npm run init-db</code></pre>
+    Esto ejecuta <code>init_db.js</code>, que crea la BD, las tablas e inserta los 40 productos de prueba.
+  </li>
+  <li>
+    <strong>Iniciar el backend</strong><br>
+    <pre><code>cd backend
+npm start</code></pre>
+    El servidor arranca en <code>http://localhost:5000</code>.
+  </li>
+  <li>
+    <strong>Iniciar el frontend</strong><br>
+    <pre><code>cd frontend
+npm install
+npm run dev</code></pre>
+    La aplicación se abre en <code>http://localhost:5173</code>.
+  </li>
+</ol>
+
+<!-- DECISIONES TÉCNICAS -->
+<h2 id="decisiones">Decisiones Técnicas</h2>
+
+<h3>¿Por qué React y no otro framework?</h3>
+<p>React ofrece un modelo basado en componentes que facilita la reutilización de código, tiene una comunidad muy activa y su ecosistema (React Router, Axios) es maduro. Para un proyecto de este tamaño, React proporciona el equilibrio perfecto entre potencia y simplicidad. Se eligió Vite como bundler por su rapidez frente a Create React App (Webpack).</p>
+
+<h3>¿Por qué Express y no otros como Fastify o NestJS?</h3>
+<p>Express es el framework web más extendido para Node.js, con la documentación más amplia y el mayor número de tutoriales. Para una API REST de este tamaño, Express ofrece exactamente lo necesario sin sobrecarga de abstracciones adicionales.</p>
+
+<h3>¿Por qué MySQL y no MongoDB?</h3>
+<p>Los datos del proyecto (usuarios, productos, pedidos) tienen relaciones claras: un pedido tiene items, un item pertenece a una categoría. Una base de datos relacional como MySQL es la elección natural para modelar estas relaciones mediante claves foráneas y transacciones ACID. Además, MySQL es el estándar en el ciclo formativo DAM.</p>
+
+<h3>¿Por qué JWT para autenticación?</h3>
+<p>JWT permite autenticación sin estado (stateless): el servidor no necesita almacenar sesiones, el token contiene toda la información necesaria. Esto es ideal para APIs REST y facilita la escalabilidad. El token se guarda en <code>localStorage</code> del navegador y se envía en cada petición mediante el header <code>Authorization</code>.</p>
+
+<h3>¿Por qué bcrypt para contraseñas?</h3>
+<p>bcrypt aplica un hash con sal (salt) incorporada y es deliberadamente lento, lo que dificulta los ataques de fuerza bruta. Con 10 rondas de hasheo, se garantiza que incluso si la base de datos se ve comprometida, las contraseñas no pueden ser recuperadas.</p>
+
+<h3>¿Por qué contexto (Context API) en lugar de Redux?</h3>
+<p>El proyecto solo necesita dos estados globales simples (usuario y carrito). La Context API de React es suficiente para este caso de uso sin añadir la complejidad de Redux (store, reducers, actions, middlewares).</p>
+
+<h3>¿Por qué separar frontend y backend?</h3>
+<p>La separación en dos proyectos independientes (frontend/ y backend/) sigue el patrón de arquitectura de microservicios a pequeña escala. Esto permite: desarrollar y desplegar cada parte por separado, reutilizar el backend con otros frontends (por ejemplo, una app Android), y mantener un código más organizado.</p>
+
+<h3>¿Por qué transacciones SQL en el checkout?</h3>
+<p>Al crear un pedido, se insertan datos en dos tablas (orders y order_items). Si falla la inserción de un item después de haber insertado la orden, la base de datos quedaría inconsistente. Las transacciones garantizan que todas las operaciones se completen o ninguna.</p>
+
+<h3>¿Por qué pool de conexiones MySQL?</h3>
+<p>Abrir y cerrar una conexión MySQL en cada petición es costoso. Un pool mantiene un conjunto de conexiones reutilizables, mejorando el rendimiento y evitando saturar la base de datos.</p>
+
+</div>
+
+</body>
+</html>

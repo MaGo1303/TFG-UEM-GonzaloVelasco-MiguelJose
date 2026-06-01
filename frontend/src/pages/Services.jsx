@@ -139,7 +139,7 @@ export default function Services() {
                         {categories.map(cat => (
                             <button
                                 key={cat.key}
-                                className={`cat-card ${filter === cat.key ? 'active' : ''}`}
+                                className={`cat-card ${filter === cat.key && cat.key !== 'all' ? 'active' : ''}`}
                                 onClick={() => handleFilter(cat.key)}
                             >
                                 <div className="cat-card-img">
@@ -163,7 +163,7 @@ export default function Services() {
                                         <span>{getCategoryCount(cat.key)} {cat.key === 'all' ? 'items' : 'disponibles'}</span>
                                     </div>
                                 </div>
-                                {filter === cat.key && (
+                                {filter === cat.key && cat.key !== 'all' && (
                                     <div className="cat-card-indicator" />
                                 )}
                             </button>

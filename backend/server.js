@@ -47,26 +47,12 @@ const ensureItemImagesTable = async () => {
     }
 };
 
-const fallbackImagesByType = {
-    car: ['/img/ferrari_488.png', '/img/Ferrari_roma.jpg', '/img/ferrari_sf90.jpg', '/img/bentley_continental.jpg', '/img/rolls_ghost.jpg', '/img/cat_coches.png'],
-    yacht: ['/img/azimut_80.jpg', '/img/sunseeker_75.jpg', '/img/ferretti_780.jpg', '/img/azimut_80.jpg'],
-    helicopter: ['/img/bell_429.jpg', '/img/airbus_h145.jpg', '/img/agusta_aw109.jpg', '/img/cat_helicopteros.png'],
-};
-
-const buildMinimumImages = (item, extraImages = []) => {
-    if (extraImages.length > 0) {
-        return extraImages.filter(Boolean);
-    }
-
-    const images = [item.image_url, ...(fallbackImagesByType[item.type] || [])]
+const buildVehicleImages = (item, extraImages = []) => {
+    const images = extraImages
         .filter(Boolean)
         .filter((url, index, arr) => arr.indexOf(url) === index);
 
-    while (images.length < 1 && images.length > 0) {
-        images.push(images[images.length % images.length]);
-    }
-
-    return images.slice(0, 10);
+    return images.length > 0 ? images : [item.image_url].filter(Boolean);
 };
 
 const attachImagesToItems = async (items) => {
@@ -85,7 +71,7 @@ const attachImagesToItems = async (items) => {
 
     return items.map(item => ({
         ...item,
-        images: buildMinimumImages(item, imagesByItem[item.id] || []),
+        images: buildVehicleImages(item, imagesByItem[item.id] || []),
     }));
 };
 

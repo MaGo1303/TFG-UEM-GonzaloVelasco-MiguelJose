@@ -6,7 +6,8 @@
     "start": "node server.js",
     "init-db": "node init_db.js",
     "seed-images": "node seed_item_images.js",
-    "seed-images:refresh": "node seed_item_images.js --refresh"
+    "seed-images:refresh": "node seed_item_images.js --refresh",
+    "seed-local-cars": "node seed_local_car_images.js"
   },
   "keywords": [],
   "author": "",
