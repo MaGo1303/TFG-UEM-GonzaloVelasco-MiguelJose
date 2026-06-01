@@ -17,7 +17,14 @@ async function initRemoteDB() {
 
     console.log(`Conectando a ${host}...`);
     try {
-        const connection = await mysql.createConnection({ host, user, password, database });
+        const connection = await mysql.createConnection({
+            host,
+            user,
+            password,
+            database,
+            port: process.env.DB_PORT || 20847,
+            ssl: { rejectUnauthorized: false }
+        });
 
         const schemaPath = path.join(__dirname, 'schema.sql');
         const schema = fs.readFileSync(schemaPath, 'utf8');
